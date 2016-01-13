@@ -84,8 +84,8 @@
       }
     }
   },
-  "dependencies": {
-    "Aima.Extension": "1.0.2-*",
-    "xunit.runner.console": "2.1.0"
-  }
+    "dependencies": {
+        "Aima.Extension": "1.0.2-160101",
+        "xunit.runner.console": "2.1.0"
+    }
 }
