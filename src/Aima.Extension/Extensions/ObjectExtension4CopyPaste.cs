@@ -23,28 +23,28 @@ namespace Aima.Extension
         /// <summary>
         /// 复制一个对象
         /// </summary>
-        /// <typeparam name="Ttarget"></typeparam>
+        /// <typeparam name="TSource"></typeparam>
         /// <param name="source"></param>
         /// <returns></returns>
-        public static Ttarget Copy<Ttarget>(this Ttarget source) where Ttarget : class, new()
+        public static TSource Copy<TSource>(this TSource source) where TSource : class, new()
         {
             var sp = new object();
             var sp_New = sp.Paste();
 
             throw new System.NotImplementedException();
-            // return default(Ttarget);
+            // return default(TSource);
         }
 
         /// <summary>
         /// 粘贴一个对象
         /// </summary>
-        /// <typeparam name="Ttarget"></typeparam>
+        /// <typeparam name="TSource"></typeparam>
         /// <param name="source"></param>
         /// <returns></returns>
-        public static Ttarget Paste<Ttarget>(this Ttarget source) where Ttarget : class, new()
+        public static TSource Paste<TSource>(this TSource source) where TSource : class, new()
         {
             throw new System.NotImplementedException();
-            // return default(Ttarget);
+            // return default(TSource);
         }
     }
 }
