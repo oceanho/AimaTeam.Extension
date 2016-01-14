@@ -29,22 +29,34 @@ namespace Aima.Extension
         public static TSource Copy<TSource>(this TSource source) where TSource : class, new()
         {
             var sp = new object();
-            var sp_New = sp.Paste();
-
             throw new System.NotImplementedException();
             // return default(TSource);
         }
 
         /// <summary>
-        /// 粘贴一个对象
+        /// 复制一个对象
         /// </summary>
         /// <typeparam name="TSource"></typeparam>
         /// <param name="source"></param>
         /// <returns></returns>
-        public static TSource Paste<TSource>(this TSource source) where TSource : class, new()
+        public static TTarget CopyTo<TSource, TTarget>(this TSource source)
+            where TSource : class, new()
+            where TTarget : class, new()
         {
+            var sp = new object();
             throw new System.NotImplementedException();
             // return default(TSource);
+        }
+
+        /// <summary>
+        /// 将source对象的值粘贴到pasteTarget对象
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static void PasteTo<TSource>(this TSource source, TSource pasteTarget) where TSource : class, new()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
