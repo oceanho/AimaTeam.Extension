@@ -5,11 +5,21 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Aima.Extension")]
-[assembly: AssemblyDescription("")]
+#if Net40
+[assembly: AssemblyDescription("Aima.Extension for .net 4.0")]
+#elif Net45
+[assembly: AssemblyDescription("Aima.Extension for .net 4.5")]
+#elif Net451
+[assembly: AssemblyDescription("Aima.Extension for .net 4.51")]
+#elif COREFX
+[assembly: AssemblyDescription("Aima.Extension for .net corefx")]
+#else
+[assembly: AssemblyDescription("Aima.Extension")]
+#endif
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Aima.Extension")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyProduct("Aima.Extension Shared Library")]
+[assembly: AssemblyCopyright("Copyright © Mr.Hai 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

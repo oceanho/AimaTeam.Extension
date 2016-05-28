@@ -32,7 +32,7 @@ namespace Aima.Extension
         /// <summary>
         /// 获取目录的上一级磁盘路径（如果parentLevel大于了最大路径字符允许的最大的级别,返回根目录,否则返回parentLevel级的磁盘路径）
         /// </summary>
-        /// <param name="path">磁盘路径字符串，比如：E:/project/opensource/XX/XXXX/XX</param>
+        /// <param name="path">磁盘路径字符串，比如：E:/project/opensrc/XX/XXXX/XX</param>
         /// <param name="parentLevel">上级目录的级别（如：上级 = ../,上上级 = ../../,每上一级增加一个../,某级下的子目录直接写为childrenA/childrenAc就可以了）</param>
         /// <returns></returns>
         public static string GetDirectoryPath(this string path, string parentLevel)
@@ -52,7 +52,7 @@ namespace Aima.Extension
         /// <summary>
         /// 获取目录的上一级磁盘路径（如果parentLevel大于了最大路径字符允许的最大的级别,返回根目录,否则返回parentLevel级的磁盘路径）
         /// </summary>
-        /// <param name="path">磁盘路径字符串，比如：E:/project/opensource/XX/XXXX/XX</param>
+        /// <param name="path">磁盘路径字符串，比如：E:/project/opensrc/XX/XXXX/XX</param>
         /// <param name="parentLevel">上级目录的级别（如：上级 = 1,上上级 = 2,每上一级递增1）</param>
         /// <returns></returns>
         public static string GetDirectoryPath(this string path, int parentLevel)
@@ -79,7 +79,7 @@ namespace Aima.Extension
         /// <summary>
         /// 获取目录的上一级磁盘路径（如果parentLevel大于了最大路径字符允许的最大的级别,返回根目录,否则返回parentLevel级的磁盘路径）+subPath
         /// </summary>
-        /// <param name="path">磁盘路径字符串，比如：E:/project/opensource/XX/XXXX/XX</param>
+        /// <param name="path">磁盘路径字符串，比如：E:/project/opensrc/XX/XXXX/XX</param>
         /// <param name="parentLevel">上级目录的级别（如：上级 = 1,上上级 = 2,每上一级递增1）</param>
         /// <param name="subVirtualPath">parentLevel的下级（下级/下....级的虚列目录路径，比如data/aimateam/blogs）</param>
         /// <returns></returns>

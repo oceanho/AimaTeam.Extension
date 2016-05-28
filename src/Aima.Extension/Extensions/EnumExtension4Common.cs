@@ -17,10 +17,9 @@
 using System;
 using System.Linq;
 using Aima.Extension.Util;
+using System.ComponentModel;
+using System.Reflection;
 
-#if COREFX || DNX
-using DescriptionAttribute = Aima.Extension.MissingfromDNX.DescriptionAttribute;
-#endif
 namespace Aima.Extension
 { 
     /// <summary>
@@ -31,47 +30,47 @@ namespace Aima.Extension
         /// <summary>
         /// 获取枚举的键
         /// </summary>
-        /// <param name="enumSource">枚举对象</param>
+        /// <param name="enumsrc">枚举对象</param>
         /// <returns></returns>
-        public static string GetEnumKey(this Enum enumSource)
+        public static string GetEnumKey(this Enum enumsrc)
         {
-            return Enum.GetName(enumSource.GetType(), enumSource);
+            return Enum.GetName(enumsrc.GetType(), enumsrc);
         }
 
         /// <summary>
         /// 获取枚举的值
         /// </summary>
-        /// <param name="enumSource">枚举对象</param>
+        /// <param name="enumsrc">枚举对象</param>
         /// <returns></returns>
-        public static EnumValueType GetEnumValue<EnumValueType>(this Enum enumSource)
+        public static EnumValueType GetEnumValue<EnumValueType>(this Enum enumsrc)
         {
             int valueIndex = 0;
-            string enumSourceKey = enumSource.GetEnumKey();
-            foreach (var item in Enum.GetNames(enumSource.GetType()))
+            string enumsrcKey = enumsrc.GetEnumKey();
+            foreach (var item in Enum.GetNames(enumsrc.GetType()))
             {
-                if (enumSourceKey.EqualIgnoreCase(item))
+                if (enumsrcKey.EqualIgnoreCase(item))
                 {
-                    return (EnumValueType)Enum.GetValues(enumSource.GetType()).GetValue(valueIndex);
+                    return (EnumValueType)Enum.GetValues(enumsrc.GetType()).GetValue(valueIndex);
                 }
                 valueIndex++;
             }
-            throw ExceptionUtil.Create<InvalidCastException>("the {0} invalid".Format2(enumSource));
+            throw ExceptionUtil.Create<InvalidCastException>("the {0} invalid".Format2(enumsrc));
         }
 
         /// <summary>
         /// 获取枚举的描述,没有System.ComponentModel.DescriptionAttribute标记返回string.Empty
         /// </summary>
-        /// <param name="enumSource">枚举对象</param>
+        /// <param name="enumsrc">枚举对象</param>
         /// <returns></returns>
-        public static string GetDescriptorText(this Enum enumSource)
+        public static string GetDescriptorText(this Enum enumsrc)
         {
 
 #if COREFX
-            System.Reflection.FieldInfo field =System.Reflection.TypeExtensions.GetField(enumSource.GetType(), enumSource.ToString());
+            FieldInfo field =System.Reflection.TypeExtensions.GetField(enumsrc.GetType(), enumsrc.ToString());
             DescriptionAttribute[] desciptors = field.GetDescriptionAttributes().ToArray();
 #else
-            System.Reflection.FieldInfo field = enumSource.GetType().GetField(enumSource.ToString());
-            System.ComponentModel.DescriptionAttribute[] desciptors = field.GetDescriptionAttributes().ToArray();
+            FieldInfo field = enumsrc.GetType().GetField(enumsrc.ToString());
+            DescriptionAttribute[] desciptors = field.GetDescriptionAttributes().ToArray();
 #endif
             if (desciptors.Length > 0)
                 return desciptors[0].Description;
@@ -81,31 +80,31 @@ namespace Aima.Extension
         /// <summary>
         /// 获取int枚举类型的值
         /// </summary>
-        /// <param name="enumSource">枚举对象</param>
+        /// <param name="enumsrc">枚举对象</param>
         /// <returns></returns>
-        public static int GetEnumValueAsInt(this Enum enumSource)
+        public static int GetEnumValueAsInt(this Enum enumsrc)
         {
-            return enumSource.GetEnumValue<int>();
+            return enumsrc.GetEnumValue<int>();
         }
 
         /// <summary>
         /// 获取byte枚举类型的值
         /// </summary>
-        /// <param name="enumSource">枚举对象</param>
+        /// <param name="enumsrc">枚举对象</param>
         /// <returns></returns>
-        public static int GetEnumValueAsByte(this Enum enumSource)
+        public static int GetEnumValueAsByte(this Enum enumsrc)
         {
-            return enumSource.GetEnumValue<byte>();
+            return enumsrc.GetEnumValue<byte>();
         }
 
         /// <summary>
         /// 获取Long/Int64枚举类型的值
         /// </summary>
-        /// <param name="enumSource">枚举对象</param>
+        /// <param name="enumsrc">枚举对象</param>
         /// <returns></returns>
-        public static long GetEnumValueAsLong(this Enum enumSource)
+        public static long GetEnumValueAsLong(this Enum enumsrc)
         {
-            return enumSource.GetEnumValue<long>();
+            return enumsrc.GetEnumValue<long>();
         }
     }
 }

@@ -17,17 +17,16 @@
 using System;
 namespace Aima.Extension
 {
-    using Delegates;
     /// <summary>
     /// 字符串的数据类型转换操作而定义的扩展方法静态类
     /// </summary>
     public static partial class StringExtension4Parser
-    {
+    { 
         /// <summary>
         /// 将一个字符串转换为指定类型的对象，若转换失败返回默认值，转换成功返回转换出来的值
         /// </summary>
         /// <typeparam name="TOut">指定类型，应该是任意一个是System.IConverable接口的实现类或者一个枚举</typeparam>
-        /// <param name="source">字符串源</param>
+        /// <param name="src">字符串源</param>
         /// <exception cref="System.FormatException">
         ///     T:System.FormatException:
         ///     conversionType 无法识别value的格式。
@@ -39,21 +38,21 @@ namespace Aima.Extension
         ///     conversionType 为 null。
         /// </exception>
         /// <returns></returns>
-        public static TOut Parser2<TOut>(this string source)
+        public static TOut To<TOut>(this string src)
         {
             bool isEnum = false;
             isEnum = typeof(TOut).IsEnum();
 
             if (isEnum)
-                return DelegateStaticConvertMethods<TOut>.ChangeTypeAsEnumFromString.Invoke(source);
-            return DelegateStaticConvertMethods<TOut>.ChangeTypeFromString.Invoke(source);
+                return DelegateStaticConvertMethods<TOut>.ChangeTypeAsEnumFromString.Invoke(src);
+            return DelegateStaticConvertMethods<TOut>.ChangeTypeFromString.Invoke(src);
         }
 
         /// <summary>
         /// 将一个字符串转换为指定类型的对象，若转换失败返回默认值，转换成功返回转换出来的值
         /// </summary>
         /// <typeparam name="TOut"></typeparam>
-        /// <param name="source">字符串源</param>
+        /// <param name="src">字符串源</param>
         /// <param name="defaultValue">如果转换失败了，返回的默认值</param>
         /// <exception cref="System.FormatException">
         ///     T:System.FormatException:
@@ -66,11 +65,11 @@ namespace Aima.Extension
         ///     conversionType 为 null。
         /// </exception>
         /// <returns></returns>
-        public static TOut Parser2<TOut>(this string source, TOut defaultValue)
+        public static TOut To<TOut>(this string src, TOut defaultValue)
         {
             try
             {
-                return source.Parser2<TOut>();
+                return src.To<TOut>();
             }
             catch { }
             return defaultValue;
@@ -79,106 +78,112 @@ namespace Aima.Extension
         /// <summary>
         /// 将一个字符串转换为int数据类型的对象值,如果转换失败,将会抛异常
         /// </summary>
-        /// <param name="source">字符串源</param>
+        /// <param name="src">字符串源</param>
         /// <returns></returns>
-        public static int Parser2Int(this string source)
+        public static int ToInt(this string src)
         {
-            return source.Parser2<int>();
+            return src.To<int>();
         }
 
         /// <summary>
         /// 将一个字符串转换为int数据类型的对象值,如果转换失败,返回defaultValue
         /// </summary>
-        /// <param name="source">字符串源</param>
+        /// <param name="src">字符串源</param>
         /// <param name="defaultValue">如果转换失败,返回的默认值</param>
         /// <returns></returns>
-        public static int Parser2Int(this string source, int defaultValue)
+        public static int ToInt(this string src, int defaultValue)
         {
-            return source.Parser2(defaultValue);
+            return src.To(defaultValue);
         }
 
         /// <summary>
         /// 将一个字符串转换为float数据类型的对象值,如果转换失败,将会抛异常
         /// </summary>
-        /// <param name="source">字符串源</param>
+        /// <param name="src">字符串源</param>
         /// <returns></returns>
-        public static float Parser2Float(this string source)
+        public static float ToFloat(this string src)
         {
-            return source.Parser2<float>();
+            return src.To<float>();
         }
 
         /// <summary>
         /// 将一个字符串转换为float数据类型的对象值,如果转换失败,返回defaultValue
         /// </summary>
-        /// <param name="source">字符串源</param>
+        /// <param name="src">字符串源</param>
         /// <param name="defaultValue">如果转换失败,返回的默认值</param>
         /// <returns></returns>
-        public static float Parser2Float(this string source, float defaultValue)
+        public static float ToFloat(this string src, float defaultValue)
         {
-            return source.Parser2(defaultValue);
+            return src.To(defaultValue);
         }
 
 
         /// <summary>
         /// 将一个字符串转换为Double数据类型的对象值,如果转换失败,将会抛异常
         /// </summary>
-        /// <param name="source">字符串源</param>
+        /// <param name="src">字符串源</param>
         /// <returns></returns>
-        public static double Parser2Double(this string source)
+        public static double ToDouble(this string src)
         {
-            return source.Parser2<double>();
+            return src.To<double>();
         }
 
         /// <summary>
         /// 将一个字符串转换为Double数据类型的对象值,如果转换失败,返回defaultValue
         /// </summary>
-        /// <param name="source">字符串源</param>
+        /// <param name="src">字符串源</param>
         /// <param name="defaultValue">如果转换失败,返回的默认值</param>
         /// <returns></returns>
-        public static double Parser2Double(this string source, double defaultValue)
+        public static double ToDouble(this string src, double defaultValue)
         {
-            return source.Parser2(defaultValue);
+            return src.To(defaultValue);
         }
 
         /// <summary>
         /// 将一个字符串转换为Decimal数据类型的对象值,如果转换失败,将会抛异常
         /// </summary>
-        /// <param name="source">字符串源</param>
+        /// <param name="src">字符串源</param>
         /// <returns></returns>
-        public static decimal Parser2Decimal(this string source)
+        public static decimal ToDecimal(this string src)
         {
-            return source.Parser2<decimal>();
+            return src.To<decimal>();
         }
 
         /// <summary>
         /// 将一个字符串转换为Double数据类型的对象值,如果转换失败,返回defaultValue
         /// </summary>
-        /// <param name="source">字符串源</param>
+        /// <param name="src">字符串源</param>
         /// <param name="defaultValue">如果转换失败,返回的默认值</param>
         /// <returns></returns>
-        public static decimal Parser2Decimal(this string source, decimal defaultValue)
+        public static decimal ToDecimal(this string src, decimal defaultValue)
         {
-            return source.Parser2(defaultValue);
+            return src.To(defaultValue);
         }
 
         /// <summary>
         /// 将一个字符串转换为DateTime数据类型的对象值,如果转换失败,将会抛异常
         /// </summary>
-        /// <param name="source">字符串源</param>
+        /// <param name="src">字符串源</param>
         /// <returns></returns>
-        public static DateTime Parser2DateTime(this string source)
+        public static DateTime ToDateTime(this string src)
         {
-            return source.Parser2<DateTime>();
+            return src.To<DateTime>();
         }
         /// <summary>
         /// 将一个字符串转换为DateTime数据类型的对象值,如果转换失败,返回defaultValue
         /// </summary>
-        /// <param name="source">字符串源</param>
+        /// <param name="src">字符串源</param>
         /// <param name="defaultValue">如果转换失败,返回的默认值</param>
         /// <returns></returns>
-        public static DateTime Parser2DateTime(this string source, DateTime defaultValue)
+        public static DateTime ToDateTime(this string src, DateTime defaultValue)
         {
-            return source.Parser2(defaultValue);
+            return src.To(defaultValue);
         }
+    }
+
+    internal sealed class DelegateStaticConvertMethods<TOut>
+    {
+        internal static Func<string, TOut> ChangeTypeAsEnumFromString = new Func<string, TOut>((inObj) => { return (TOut)Enum.Parse(typeof(TOut), inObj); });
+        internal static Func<string, TOut> ChangeTypeFromString = new Func<string, TOut>((inObj) => { return (TOut)Convert.ChangeType(inObj, typeof(TOut)); });
     }
 }

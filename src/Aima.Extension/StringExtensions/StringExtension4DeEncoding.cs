@@ -24,7 +24,7 @@ namespace Aima.Extension
     /// <summary>
     /// 字符串的编码与解码操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class StringExtension4EncodeAndDecode
+    public static partial class StringExtension4DeEncoding
     {
         private static readonly Encoding _defaultEncoding = Encoding.UTF8;
 
@@ -33,27 +33,27 @@ namespace Aima.Extension
         /// <summary>
         /// 使用utf-8编码,指定的Base64FormattingOptions.None,将一个普通字符串转换为base64编码字符
         /// </summary>
-        /// <param name="source">指定的字符串</param>
+        /// <param name="src">指定的字符串</param>
         /// <returns></returns>
-        public static string ToBase64String(this string source)
+        public static string ToBase64String(this string src)
         {
-            return source.ToBase64String(_defaultEncoding);
+            return src.ToBase64String(_defaultEncoding);
         }
 
         /// <summary>
         /// 使用指定的编码,指定的Base64FormattingOptions.None,将一个普通字符串转换为base64编码字符
         /// </summary>
-        /// <param name="source">指定的字符串</param>
+        /// <param name="src">指定的字符串</param>
         /// <param name="encoding">指定的编码格式</param>
         /// <returns></returns>
-        public static string ToBase64String(this string source, Encoding encoding)
+        public static string ToBase64String(this string src, Encoding encoding)
         {
 #if COREFX
-            Ensure.IsNotNull(source, "source");
-            byte[] bytes = encoding.GetBytes(source);
+            Ensure.IsNotNull(src, "src");
+            byte[] bytes = encoding.GetBytes(src);
             return Convert.ToBase64String(bytes);
 #else
-            return Convert.ToBase64String(encoding.GetBytes(source));
+            return Convert.ToBase64String(encoding.GetBytes(src));
 #endif
         }
 
@@ -61,58 +61,58 @@ namespace Aima.Extension
         /// <summary>
         /// 使用指定的编码,指定的Base64FormattingOptions,将一个普通字符串转换为base64编码字符
         /// </summary>
-        /// <param name="source">指定的字符串</param>
+        /// <param name="src">指定的字符串</param>
         /// <param name="encoding">指定的编码格式</param>
         /// <param name="base64FrmOption">指定的Base64FormattingOptions</param>
         /// <returns></returns>
-        public static string ToBase64String(this string source, Encoding encoding, Base64FormattingOptions base64FrmOption)
+        public static string ToBase64String(this string src, Encoding encoding, Base64FormattingOptions base64FrmOption)
         {
-            Ensure.IsNotNull(source, "source");
-            byte[] bytes = encoding.GetBytes(source);
+            Ensure.IsNotNull(src, "src");
+            byte[] bytes = encoding.GetBytes(src);
             return Convert.ToBase64String(bytes, base64FrmOption);
         }
 #endif
         /// <summary>
         /// 使用utf-8编码,指定的Base64FormattingOptions.None,将一个base64编码字符转换为普通字符串
         /// </summary>
-        /// <param name="source">指定的字符串</param>
+        /// <param name="src">指定的字符串</param>
         /// <returns></returns>
-        public static string FromBase64ToString(this string source)
+        public static string FromBase64ToString(this string src)
         {
-            return source.FromBase64ToString(_defaultEncoding);
+            return src.FromBase64ToString(_defaultEncoding);
         }
 
         /// <summary>
         /// 使用指定的编码,指定的Base64FormattingOptions.None,将一个base64编码字符转换为普通字符串
         /// </summary>
-        /// <param name="source">指定的字符串</param>
+        /// <param name="src">指定的字符串</param>
         /// <param name="encoding">指定的编码格式</param>
         /// <returns></returns>
-        public static string FromBase64ToString(this string source, Encoding encoding)
+        public static string FromBase64ToString(this string src, Encoding encoding)
         {
 
 #if COREFX
-            Ensure.IsNotNull(source, "source");
-            byte[] bytes = Convert.FromBase64String(source);
+            Ensure.IsNotNull(src, "src");
+            byte[] bytes = Convert.FromBase64String(src);
             return encoding.GetString(bytes,0,bytes.Length);
 #else
-            return source.FromBase64ToString(encoding, Base64FormattingOptions.None);
+            return src.FromBase64ToString(encoding, Base64FormattingOptions.None);
 #endif
 
         }
 
 #if !COREFX
         /// <summary>
-        /// 使用指定的编码,指定的Base64FormattingOptions,将一个base64编码字符转换为普通字符串，source必须是一个正确的base64编码字符串
+        /// 使用指定的编码,指定的Base64FormattingOptions,将一个base64编码字符转换为普通字符串，src必须是一个正确的base64编码字符串
         /// </summary>
-        /// <param name="source">指定的字符串</param>
+        /// <param name="src">指定的字符串</param>
         /// <param name="encoding">指定的编码格式</param>
         /// <param name="base64FrmOption">指定的Base64FormattingOptions</param>
         /// <returns></returns>
-        public static string FromBase64ToString(this string source, Encoding encoding, Base64FormattingOptions base64FrmOption)
+        public static string FromBase64ToString(this string src, Encoding encoding, Base64FormattingOptions base64FrmOption)
         {
-            Ensure.IsNotNull(source, "source");
-            byte[] bytes = Convert.FromBase64String(source);
+            Ensure.IsNotNull(src, "src");
+            byte[] bytes = Convert.FromBase64String(src);
             return encoding.GetString(bytes);
         }
 #endif
@@ -123,9 +123,9 @@ namespace Aima.Extension
         /// <summary>
         /// 对 Html字符串进行编码操作,返回编码后的字符串
         /// </summary>
-        /// <param name="source">指定需要进行编码的字符串</param>
+        /// <param name="src">指定需要进行编码的字符串</param>
         /// <returns></returns>
-        public static string HtmlEncode(this string source)
+        public static string HtmlEncode(this string src)
         {
             throw new NotImplementedException();
         }
@@ -133,18 +133,18 @@ namespace Aima.Extension
         /// <summary>
         /// 对 字符串进行Html解码操作,返回解码后的字符串
         /// </summary>
-        /// <param name="source">指定需要进行解码的字符串</param>
+        /// <param name="src">指定需要进行解码的字符串</param>
         /// <returns></returns>
-        public static string HtmlDecode(this string source)
+        public static string HtmlDecode(this string src)
         {
             throw new NotImplementedException();
         }
         /// <summary>
         /// 对 字符串进行URL编码操作,返回编码后的字符串
         /// </summary>
-        /// <param name="source">指定需要进行编码的字符串</param>
+        /// <param name="src">指定需要进行编码的字符串</param>
         /// <returns></returns>
-        public static string UrlEncode(this string source)
+        public static string UrlEncode(this string src)
         {
             throw new NotImplementedException();
         }
@@ -152,9 +152,9 @@ namespace Aima.Extension
         /// <summary>
         /// 对 字符串进行URL解码操作,返回解码后的字符串
         /// </summary>
-        /// <param name="source">指定需要进行解码的字符串</param>
+        /// <param name="src">指定需要进行解码的字符串</param>
         /// <returns></returns>
-        public static string UrlDecode(this string source)
+        public static string UrlDecode(this string src)
         {
             throw new NotImplementedException();
         }

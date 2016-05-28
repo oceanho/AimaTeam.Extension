@@ -27,11 +27,23 @@ namespace Aima.Extension.Util
         /// 创建一个指定Exception类型的Exception对象
         /// </summary>
         /// <typeparam name="TExceptionType">Exception对象或子对象</typeparam>
-        /// <param name="message">异常消息</param>
+        /// <param name="message">消息</param>
         /// <returns></returns>
         internal static TExceptionType Create<TExceptionType>(string message) where TExceptionType : Exception
         {
             return (TExceptionType)Activator.CreateInstance(typeof(TExceptionType), new object[] { message });
+        }
+
+        /// <summary>
+        /// 创建一个指定Exception类型的Exception对象
+        /// </summary>
+        /// <typeparam name="TExceptionType">Exception对象或子对象</typeparam>
+        /// /// <param name="message">消息</param>
+        /// <param name="innerException">异常消息</param>
+        /// <returns></returns>
+        internal static TExceptionType Create<TExceptionType>(string message, Exception innerException) where TExceptionType : Exception
+        {
+            return (TExceptionType)Activator.CreateInstance(typeof(TExceptionType), new object[] { message, innerException });
         }
     }
 }

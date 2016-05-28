@@ -1,67 +1,50 @@
 ﻿{
+  "title": "AimaTeam Shared Library",
+  "copyright": "AimaTeam",
   "version": "1.0.2-160101",
-  "description": "AimaTeam Core library",
+  "description": "AimaTeam Shared Library",
   "authors": [ "AimaTeam" ],
-  "tags": [ "AimaTeam", "Aima", "Aima.Extension" ],
-  "projectUrl": "http://git.oschina.net/AimaTeam/Aima.Extension",
-  "licenseUrl": "http://git.oschina.net/AimaTeam/Aima.Extension/blob/master/LICENSE",
-
+  "packOptions": {
+    "tags": [ "extension methods", "AimaTeam", "Aima", "Aima.Extension" ],
+    "projectUrl": "http://git.oschina.net/AimaTeam/Aima.Extension",
+    "licenseUrl": "http://git.oschina.net/AimaTeam/Aima.Extension/blob/master/LICENSE"
+  },
   "frameworks": {
     "net40": {
-      "compilationOptions": {
+      "buildOptions": {
         "define": [ "Net40" ]
       }
     },
-    "net451": { },
+    "net45": {
+      "buildOptions": {
+        "define": [ "Net45" ]
+      }
+    },
+    "net451": {
+      "buildOptions": {
+        "define": [ "Net451" ]
+      }
+    },
     "dnx451": {
       "frameworkAssemblies": {
         "System.Data": "4.0.0.0",
         "System.Xml": "4.0.0.0"
       },
-      "compilationOptions": {
-        "define": [ "ASYNC" ]
+      "buildOptions": {
+        "define": [ "Net46" ]
       }
     },
-    "dotnet5.4": {
+    "dnxcore50": {
       "dependencies": {
-        "Microsoft.CSharp": "4.0.1-beta-23516",
-        "System.Collections": "4.0.11-beta-23516",
-        "System.Linq": "4.0.1-beta-23516",
-        "System.Runtime": "4.0.21-beta-23516",
-        "System.Security.Cryptography.Algorithms": "4.0.0-beta-23225",
-        "System.Reflection": "4.1.0-beta-23516",
-        "System.Text.RegularExpressions": "4.0.11-rc2-23614",
-        "System.Text.Encoding": "4.0.0-beta-23019",
-        "System.IO.FileSystem": "4.0.0-beta-22416",
-        "System.ComponentModel": "4.0.1-rc2-23614",
-        "System.Threading": "4.0.11-beta-23516",
-        "System.Reflection.Emit": "4.0.1-*",
-        "System.Reflection.Emit.ILGeneration": "4.0.1-*",
-        "System.Reflection.Emit.Lightweight": "4.0.1-*"
+        "NETStandard.Library": "1.5.0-rc2-24027",
+        "System.Linq.Expressions": "4.0.11-rc2-24027",
+        "System.Reflection.TypeExtensions": "4.1.0-rc2-24027",
+        "System.Security.Cryptography.Algorithms": "4.1.0-rc2-24027"
       },
-      "compilationOptions": {
-        "define": [ "ASYNC", "COREFX" ]
-      }
-    },
-    "dnx50": {
-      "dependencies": {
-        "Microsoft.CSharp": "4.0.1-beta-23516",
-        "System.Collections": "4.0.11-beta-23516",
-        "System.Linq": "4.0.1-beta-23516",
-        "System.Runtime": "4.0.21-beta-23516",
-        "System.Reflection": "4.1.0-beta-23516",
-        "System.Text.RegularExpressions": "4.0.11-rc2-23614",
-        "System.Text.Encoding": "4.0.0-beta-23019",
-        "System.IO.FileSystem": "4.0.0-beta-22416",
-        "System.ComponentModel": "4.0.1-rc2-23614",
-        "System.Threading": "4.0.11-beta-23516",
-        "System.Reflection.Emit": "4.0.1-*",
-        "System.Reflection.Emit.ILGeneration": "4.0.1-*",
-        "System.Reflection.Emit.Lightweight": "4.0.1-*"
-      },
-      "compilationOptions": {
-        "define": [ "ASYNC", "DNX" ]
-      }
+      "buildOptions": { "define": [ "COREFX" ] }
     }
+  },
+  "buildOptions": {
+    "xmlDoc": true
   }
 }

@@ -28,7 +28,7 @@ namespace Aima.Extension
     {        
         private static RegexOptions _defaultRegexOptions = RegexOptions.Compiled | RegexOptions.IgnoreCase;
 
-#if Net20||Net40
+#if Net40
         private static Regex _urlRegex = new Regex("", _defaultRegexOptions);
         private static Regex _mailRegex = new Regex("", _defaultRegexOptions);
         private static Regex _integerRegex = new Regex("^\\d+$", _defaultRegexOptions);
@@ -42,25 +42,25 @@ namespace Aima.Extension
         /// <summary>
         /// 通过正则表达式验证指定字符是否满足pattern,满足返回true,否则返回false
         /// </summary>
-        /// <param name="source">指定的源字符串</param>
+        /// <param name="src">指定的源字符串</param>
         /// <param name="pattern">指定一个正则表达式匹配字符</param>
         /// <param name="regexOptions">指定一个正则表达式的选项枚举值</param>
         /// <returns></returns>
-        public static bool IsRegexMath(this string source, string pattern, RegexOptions regexOptions)
+        public static bool IsRegexMath(this string src, string pattern, RegexOptions regexOptions)
         {
-            Ensure.IsNotNull(source, "IsRegexMath(source)");
-            return Regex.IsMatch(source, pattern, regexOptions);
+            Ensure.IsNotNull(src, "IsRegexMath(src)");
+            return Regex.IsMatch(src, pattern, regexOptions);
         }
 
         /// <summary>
         /// 通过正则表达式验证指定字符是否满足pattern,满足返回true,否则返回false
         /// </summary>
-        /// <param name="source">指定的源字符串</param>
+        /// <param name="src">指定的源字符串</param>
         /// <param name="pattern">指定一个正则表达式匹配字符</param>
         /// <returns></returns>
-        public static bool IsRegexMath(this string source, string pattern)
+        public static bool IsRegexMath(this string src, string pattern)
         {
-            return source.IsRegexMath(pattern, _defaultRegexOptions);
+            return src.IsRegexMath(pattern, _defaultRegexOptions);
         }
     }
 }

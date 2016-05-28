@@ -25,31 +25,31 @@ namespace Aima.Extension
         /// <summary>
         /// 获取dateTime日期的起始时间值,返回这一天中最开始的时间点（比如：2015-12-07 23:33:39,返回2015-12-07 00:00:00）
         /// </summary>
-        /// <param name="dateTimeSource">指定的dateTime</param>
+        /// <param name="dateTimesrc">指定的dateTime</param>
         /// <returns></returns>
-        public static DateTime GetDateTimeAsDayStart(this DateTime dateTimeSource)
+        public static DateTime GetDateTimeAsDayStart(this DateTime dateTimesrc)
         {
-            return new DateTime(dateTimeSource.Year, dateTimeSource.Month, dateTimeSource.Month, 00, 00, 00);
+            return new DateTime(dateTimesrc.Year, dateTimesrc.Month, dateTimesrc.Day, 00, 00, 00);
         }
 
         /// <summary>
         /// 获取dateTime日期的起始时间值,返回这一天中最开始的时间点（比如：2015-12-07 23:33:39,返回2015-12-07 23:59:59）
         /// </summary>
-        /// <param name="dateTimeSource">指定的dateTime</param>
+        /// <param name="dateTimesrc">指定的dateTime</param>
         /// <returns></returns>
-        public static DateTime GetDateTimeAsDayEnded(this DateTime dateTimeSource)
+        public static DateTime GetDateTimeAsDayEnded(this DateTime dateTimesrc)
         {
-            return new DateTime(dateTimeSource.Year, dateTimeSource.Month, dateTimeSource.Month, 23, 59, 59);
+            return new DateTime(dateTimesrc.Year, dateTimesrc.Month, dateTimesrc.Day, 23, 59, 59);
         }
 
         /// <summary>
-        /// 获取指定时间的时间戳（1970-01-01 00:00:00 到 dateTimeSource之间的时间戳）
+        /// 获取指定时间的时间戳（1970-01-01 00:00:00 到 dateTimesrc之间的时间戳）
         /// </summary>
-        /// <param name="dateTimeSource">dateTimeSource</param>
+        /// <param name="dateTimesrc">dateTimesrc</param>
         /// <returns></returns>
-        public static long GetTicks(this DateTime dateTimeSource)
+        public static long GetTicks(this DateTime dateTimesrc)
         {
-            return new TimeSpan(dateTimeSource.Ticks).Ticks;
+            return new TimeSpan(dateTimesrc.Ticks).Ticks;
         }
     }
 }

@@ -20,10 +20,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 
 
-
-#if COREFX
-using DescriptionAttribute = Aima.Extension.MissingfromDNX.DescriptionAttribute;
-#endif
 namespace Aima.Extension
 {
     /// <summary>
@@ -35,17 +31,17 @@ namespace Aima.Extension
         /// 获取某个类型的TAttribute属性集合列表,没有指定的Attribute类型,返回长度为零的TAttribute数组
         /// </summary>
         /// <typeparam name="TAttribute">指定的Attribute类型</typeparam>
-        /// <param name="typeSource">指定的获取TAttribute的对象类型</param>
+        /// <param name="typesrc">指定的获取TAttribute的对象类型</param>
         /// <param name="inherit">搜索此成员的继承链以查找这些属性，则为 true；否则为 false。属性和事件中忽略此参数</param>
         /// <returns>类型的TAttribute属性集合列表,没有指定的Attribute类型,返回长度为零的TAttribute数组</returns>
-        public static TAttribute[] GetAttributes<TAttribute>(this Type typeSource, bool inherit) where TAttribute : Attribute
+        public static TAttribute[] GetAttributes<TAttribute>(this Type typesrc, bool inherit) where TAttribute : Attribute
         {
             List<TAttribute> attrList = new List<TAttribute>();
 
 #if COREFX
-            IEnumerable<System.Attribute> attributes = typeSource.GetTypeInfo().GetCustomAttributes(typeof(TAttribute), inherit);
+            IEnumerable<System.Attribute> attributes = typesrc.GetTypeInfo().GetCustomAttributes(typeof(TAttribute), inherit);
 #else
-            object[] attributes = typeSource.GetCustomAttributes(typeof(TAttribute), inherit);
+            object[] attributes = typesrc.GetCustomAttributes(typeof(TAttribute), inherit);
 #endif
             foreach (var itemAttr in attributes)
             {
@@ -57,22 +53,22 @@ namespace Aima.Extension
         /// <summary>
         /// 获取某个类型的DescriptionAttribute标记集合列表（搜索此成员的继承链查找，即可以搜索到此类型集成的类,实现的接口上的DescriptionAttribute标记）
         /// </summary>
-        /// <param name="typeSource">指定的获取TAttribute的对象类型</param>
+        /// <param name="typesrc">指定的获取TAttribute的对象类型</param>
         /// <returns></returns>
-        public static DescriptionAttribute[] GetDescriptionAttributes(this Type typeSource)
+        public static DescriptionAttribute[] GetDescriptionAttributes(this Type typesrc)
         {
-            return typeSource.GetDescriptionAttributes(true);
+            return typesrc.GetDescriptionAttributes(true);
         }
 
         /// <summary>
         /// 通过指定inherit获取某个类型的DescriptionAttribute标记集合列表
         /// </summary>
-        /// <param name="typeSource">指定的获取TAttribute的对象类型</param>
+        /// <param name="typesrc">指定的获取TAttribute的对象类型</param>
         /// <param name="inherit">搜索此成员的继承链以查找这些属性，则为 true；否则为 false。属性和事件中忽略此参数</param>
         /// <returns></returns>
-        public static DescriptionAttribute[] GetDescriptionAttributes(this Type typeSource, bool inherit)
+        public static DescriptionAttribute[] GetDescriptionAttributes(this Type typesrc, bool inherit)
         {
-            return typeSource.GetAttributes<DescriptionAttribute>(inherit);
+            return typesrc.GetAttributes<DescriptionAttribute>(inherit);
         }
     }
 }

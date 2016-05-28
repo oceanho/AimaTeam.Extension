@@ -27,25 +27,25 @@ namespace Aima.Extension
         /// <summary>
         /// 忽略大小写、比较两个字符串是否相等，相等返回True,否则返回False（Equals选项:StringComparison.OrdinalIgnoreCase）
         /// </summary>
-        /// <param name="source">指定比较的字符</param>
+        /// <param name="src">指定比较的字符</param>
         /// <param name="compareString">指定比较的参考字符</param>
         /// <returns></returns>
-        public static bool EqualIgnoreCase(this string source, string compareString)
+        public static bool EqualIgnoreCase(this string src, string compareString)
         {
-            return source.Equals(compareString, StringComparison.OrdinalIgnoreCase);
+            return src.Equals(compareString, StringComparison.OrdinalIgnoreCase);
         }
 
         /// <summary>
-        /// 忽略大小写、判断compareString中是否有任意一个字符串与source相等，相等返回True,否则返回False（Equals选项:StringComparison.OrdinalIgnoreCase）
+        /// 忽略大小写、判断compareString中是否有任意一个字符串与src相等，相等返回True,否则返回False（Equals选项:StringComparison.OrdinalIgnoreCase）
         /// </summary>
-        /// <param name="source">指定比较的字符</param>
+        /// <param name="src">指定比较的字符</param>
         /// <param name="compareString">指定比较的参考字符</param>
         /// <returns></returns>
-        public static bool EqualsAny(this string source, params string[] compareString)
+        public static bool EqualsAny(this string src, params string[] compareString)
         {
             foreach (var item in compareString)
             {
-                if (source.EqualIgnoreCase(item)) return true;
+                if (src.EqualIgnoreCase(item)) return true;
             }
             return false;
         }

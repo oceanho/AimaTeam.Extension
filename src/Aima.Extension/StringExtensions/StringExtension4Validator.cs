@@ -27,11 +27,11 @@ namespace Aima.Extension
         /// <summary>
         /// 验证字符串是否是一个有效的Base64编码格式的字符串
         /// </summary>
-        /// <param name="source"></param>
+        /// <param name="src"></param>
         /// <returns></returns>
-        public static bool IsValidBASE64String(this string source)
+        public static bool IsValidBASE64String(this string src)
         {
-            return source.IsRegexMath(_base64Regex, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+            return src.IsRegexMath(_base64Regex, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
         }
     }
 }

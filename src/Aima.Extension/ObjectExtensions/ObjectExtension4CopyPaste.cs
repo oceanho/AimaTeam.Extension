@@ -23,38 +23,38 @@ namespace Aima.Extension
         /// <summary>
         /// 复制一个对象
         /// </summary>
-        /// <typeparam name="TSource"></typeparam>
-        /// <param name="source"></param>
+        /// <typeparam name="Tsrc"></typeparam>
+        /// <param name="src"></param>
         /// <returns></returns>
-        public static TSource Copy<TSource>(this TSource source) where TSource : class, new()
+        public static Tsrc Copy<Tsrc>(this Tsrc src) where Tsrc : class, new()
         {
             var sp = new object();
             throw new System.NotImplementedException();
-            // return default(TSource);
+            // return default(Tsrc);
         }
 
         /// <summary>
         /// 复制一个对象
         /// </summary>
-        /// <typeparam name="TSource"></typeparam>
-        /// <param name="source"></param>
+        /// <typeparam name="Tsrc"></typeparam>
+        /// <param name="src"></param>
         /// <returns></returns>
-        public static TTarget CopyTo<TSource, TTarget>(this TSource source)
-            where TSource : class, new()
+        public static TTarget CopyTo<Tsrc, TTarget>(this Tsrc src)
+            where Tsrc : class, new()
             where TTarget : class, new()
         {
             var sp = new object();
             throw new System.NotImplementedException();
-            // return default(TSource);
+            // return default(Tsrc);
         }
 
         /// <summary>
-        /// 将source对象的值粘贴到pasteTarget对象
+        /// 将src对象的值粘贴到pasteTarget对象
         /// </summary>
-        /// <typeparam name="TSource"></typeparam>
-        /// <param name="source"></param>
+        /// <typeparam name="Tsrc"></typeparam>
+        /// <param name="src"></param>
         /// <returns></returns>
-        public static void PasteTo<TSource>(this TSource source, TSource pasteTarget) where TSource : class, new()
+        public static void PasteTo<Tsrc>(this Tsrc src, Tsrc pasteTarget) where Tsrc : class, new()
         {
             throw new System.NotImplementedException();
         }

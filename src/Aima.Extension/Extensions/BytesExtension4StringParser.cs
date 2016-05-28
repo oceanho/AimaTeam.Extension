@@ -13,38 +13,38 @@ namespace Aima.Extension
     {
         #region --> GetStringByUtf8()
         /// <summary>
-        /// 使用Utf-8的编码方式获取参数:source字节数组获取到一个字符串
+        /// 使用Utf-8的编码方式获取参数:src字节数组获取到一个字符串
         /// </summary>
-        /// <param name="source">指定的字节数组</param>
+        /// <param name="src">指定的字节数组</param>
         /// <returns></returns>
-        public static string GetStringByUtf8(this IEnumerable<byte> source)
+        public static string GetStringByUtf8(this IEnumerable<byte> src)
         {
-            return source.GetStringByUtf8(0);
+            return src.GetStringByUtf8(0);
         }
 
 
         /// <summary>
-        /// 使用Utf-8编码方式获取参数:source字节数组获取到一个字符串
+        /// 使用Utf-8编码方式获取参数:src字节数组获取到一个字符串
         /// </summary>
-        /// <param name="source">指定的字节数组</param>
+        /// <param name="src">指定的字节数组</param>
         /// <param name="encoder">指定的编码方式</param>
         /// <param name="startIndex">开始转换的为字符的字节数组索引</param>
         /// <returns></returns>
-        public static string GetStringByUtf8(this IEnumerable<byte> source, int startIndex)
+        public static string GetStringByUtf8(this IEnumerable<byte> src, int startIndex)
         {
-            return source.GetStringByUtf8(startIndex, source.Count());
+            return src.GetStringByUtf8(startIndex, src.Count());
         }
 
         /// <summary>
-        /// 使用Utf-8编码方式获取参数:source字节数组获取到一个字符串
+        /// 使用Utf-8编码方式获取参数:src字节数组获取到一个字符串
         /// </summary>
-        /// <param name="source">指定的字节数组</param>
+        /// <param name="src">指定的字节数组</param>
         /// <param name="startIndex">开始转换的为字符的字节数组索引</param>
         /// <param name="count">指定转换的字节数组个数</param>
         /// <returns></returns>
-        public static string GetStringByUtf8(this IEnumerable<byte> source, int startIndex, int count)
+        public static string GetStringByUtf8(this IEnumerable<byte> src, int startIndex, int count)
         {
-            return source.GetStringByEncoding(Encodings._utf8, startIndex, count);
+            return src.GetStringByEncoding(Encodings._utf8, startIndex, count);
         }
         #endregion        
 

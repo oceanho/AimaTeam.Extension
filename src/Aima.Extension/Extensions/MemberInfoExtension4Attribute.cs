@@ -15,22 +15,9 @@
 ****************************************************************/
 
 using System;
-
-/* 项目“Aima.Extension..NET Platform 5.4”的未合并的更改
-在此之前:
-using System.Collections;
-using System.Collections.Generic;
-在此之后:
-using System.Collections.Generic;
-*/
-using System.Collections.Generic;
 using System.ComponentModel;
+using System.Collections.Generic;
 
-
-
-#if COREFX
-using DescriptionAttribute = Aima.Extension.MissingfromDNX.DescriptionAttribute;
-#endif
 namespace Aima.Extension
 {
     /// <summary>
@@ -47,7 +34,6 @@ namespace Aima.Extension
         /// <returns>类型的TAttribute属性集合列表,没有指定的Attribute类型,返回长度为零的TAttribute数组</returns>
         public static IEnumerable<TAttribute> GetAttributes<TAttribute>(this System.Reflection.MemberInfo memberInfo, bool inherit) where TAttribute : Attribute
         {
-            // List<TAttribute> attrList = new List<TAttribute>();
 #if COREFX
             foreach (var itemAttr in System.Reflection.CustomAttributeExtensions.GetCustomAttributes(memberInfo,inherit))
 #else
@@ -55,10 +41,8 @@ namespace Aima.Extension
 #endif
             {
                 yield return (TAttribute)itemAttr;
-                // attrList.Add((TAttribute)itemAttr);
             }
             yield break;
-            // return attrList.ToArray();
         }
 
         /// <summary>

@@ -24,15 +24,15 @@ namespace Aima.Extension
         /// 验证对象是否为空引用。如果是空引用，返回True，不是返回False
         /// 注：针对String类型的数据，加入IsNullOrEmpty()方法进行了校验
         /// </summary>
-        /// <param name="obj_Source">指定校验的object对象</param>
+        /// <param name="obj_src">指定校验的object对象</param>
         /// <returns></returns>
-        public static bool IsNullReference(this object obj_Source)
+        public static bool IsNullReference(this object obj_src)
         {
-            if (obj_Source != null)
+            if (obj_src != null)
             {
-                if (obj_Source.GetType() == typeof(string))
+                if (obj_src.GetType() == typeof(string))
                 {
-                    return obj_Source.ToString().IsNullOrEmp();
+                    return obj_src.ToString().IsNullOrEmp();
                 }
                 return false;
             }

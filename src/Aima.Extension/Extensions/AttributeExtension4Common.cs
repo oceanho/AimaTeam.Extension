@@ -25,12 +25,12 @@ namespace Aima.Extension
         /// <summary>
         /// 获取Attribute的标注说明描述信息
         /// </summary>
-        /// <param name="attrSource">指定的Attribute对象</param>
+        /// <param name="attrsrc">指定的Attribute对象</param>
         /// <returns></returns>
-        public static string GetDescriptorText(this Attribute attrSource)
+        public static string GetDescriptorText(this Attribute attrsrc)
         {
             throw new NotImplementedException();
-            // return attrSource.GetType().GetField().GetDescriptionAttributes().FirstOrDefault().Description;
+            // return attrsrc.GetType().GetField().GetDescriptionAttributes().FirstOrDefault().Description;
         }
     }
 }
