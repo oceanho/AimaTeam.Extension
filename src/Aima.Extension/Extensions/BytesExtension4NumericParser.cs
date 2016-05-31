@@ -459,34 +459,34 @@ namespace Aima.Extension
             switch (typeof(TNumeric).GetTypeCode())
             {
                 case TypeCode.Char:
-                    _object = BitConverter.ToChar(GetToBytes(_bytes, startIndex, 2, autoApeendByteIfLengthLess, isAppendToEnd), 0);
+                    _object = BitConverter.ToChar(GetBytes(_bytes, startIndex, 2, autoApeendByteIfLengthLess, isAppendToEnd), 0);
                     break;
                 case TypeCode.Int16:
-                    _object = BitConverter.ToInt16(GetToBytes(_bytes, startIndex, 2, autoApeendByteIfLengthLess, isAppendToEnd), 0);
+                    _object = BitConverter.ToInt16(GetBytes(_bytes, startIndex, 2, autoApeendByteIfLengthLess, isAppendToEnd), 0);
                     break;
                 case TypeCode.UInt16:
-                    _object = BitConverter.ToInt16(GetToBytes(_bytes, startIndex, 2, autoApeendByteIfLengthLess, isAppendToEnd), 0);
+                    _object = BitConverter.ToInt16(GetBytes(_bytes, startIndex, 2, autoApeendByteIfLengthLess, isAppendToEnd), 0);
                     break;
                 case TypeCode.Int32:
-                    _object = BitConverter.ToInt32(GetToBytes(_bytes, startIndex, 4, autoApeendByteIfLengthLess, isAppendToEnd), 0);
+                    _object = BitConverter.ToInt32(GetBytes(_bytes, startIndex, 4, autoApeendByteIfLengthLess, isAppendToEnd), 0);
                     break;
                 case TypeCode.UInt32:
-                    _object = BitConverter.ToUInt32(GetToBytes(_bytes, startIndex, 4, autoApeendByteIfLengthLess, isAppendToEnd), 0);
+                    _object = BitConverter.ToUInt32(GetBytes(_bytes, startIndex, 4, autoApeendByteIfLengthLess, isAppendToEnd), 0);
                     break;
                 case TypeCode.Int64:
-                    _object = BitConverter.ToUInt64(GetToBytes(_bytes, startIndex, 8, autoApeendByteIfLengthLess, isAppendToEnd), 0);
+                    _object = BitConverter.ToUInt64(GetBytes(_bytes, startIndex, 8, autoApeendByteIfLengthLess, isAppendToEnd), 0);
                     break;
                 case TypeCode.UInt64:
-                    _object = BitConverter.ToUInt64(GetToBytes(_bytes, startIndex, 8, autoApeendByteIfLengthLess, isAppendToEnd), 0);
+                    _object = BitConverter.ToUInt64(GetBytes(_bytes, startIndex, 8, autoApeendByteIfLengthLess, isAppendToEnd), 0);
                     break;
                 case TypeCode.Single:
-                    _object = BitConverter.ToSingle(GetToBytes(_bytes, startIndex, 4, autoApeendByteIfLengthLess, isAppendToEnd), 0);
+                    _object = BitConverter.ToSingle(GetBytes(_bytes, startIndex, 4, autoApeendByteIfLengthLess, isAppendToEnd), 0);
                     break;
                 case TypeCode.Double:
-                    _object = BitConverter.ToDouble(GetToBytes(_bytes, startIndex, 8, autoApeendByteIfLengthLess, isAppendToEnd), 0);
+                    _object = BitConverter.ToDouble(GetBytes(_bytes, startIndex, 8, autoApeendByteIfLengthLess, isAppendToEnd), 0);
                     break;
                 case TypeCode.Decimal:
-                    _object = Convert.ToDecimal(BitConverter.ToDouble(GetToBytes(_bytes, startIndex, 8, autoApeendByteIfLengthLess, isAppendToEnd), 0));
+                    _object = Convert.ToDecimal(BitConverter.ToDouble(GetBytes(_bytes, startIndex, 8, autoApeendByteIfLengthLess, isAppendToEnd), 0));
                     break;
                 default:
                     throw new InvalidCastException("指定的TNumeric类型不是一个有效的CSharp数值数据类型,有效类型必须是:{0}".JoinFormat("/",
@@ -498,7 +498,7 @@ namespace Aima.Extension
 
         #region help for (ToNumeric<TNumeric>()) of GetToBytes()
 
-        private static byte[] GetToBytes(byte[] bytes, int startIndex, int typeByteLen, byte autoApeendByteIfLengthLess, bool isAppendToEnd)
+        private static byte[] GetBytes(byte[] bytes, int startIndex, int typeByteLen, byte autoApeendByteIfLengthLess, bool isAppendToEnd)
         {
             Ensure.IsNotNull(bytes, "bytes,指定的转换字节数组长度不能是null,请确认");
 
