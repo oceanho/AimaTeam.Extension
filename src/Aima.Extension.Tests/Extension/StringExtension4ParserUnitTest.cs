@@ -8,17 +8,17 @@ namespace Aima.Extension.Tests
     public class StringExtension4ParserUnitTest
     {
         [Fact]
-        public void Parser2()
+        public void ParserTo()
         {
             string valid_NumericString = "123";
             string invalid_NumericString = "123a";
-            Assert.True(valid_NumericString.Parser2Int() == 123);
-            Assert.True(valid_NumericString.Parser2<int>() == 123);
+            Assert.True(valid_NumericString.ToInt() == 123);
+            Assert.True(valid_NumericString.To<int>() == 123);
 
 
             // invalid
-            // Assert.True(invalid_NumericString.Parser2Int() == -1);
-            Assert.True(invalid_NumericString.Parser2Int(-1) == -1);            
+            // Assert.True(invalid_NumericString.ToInt() == -1);
+            Assert.True(invalid_NumericString.ToInt(-1) == -1);            
         }
     }
 }
