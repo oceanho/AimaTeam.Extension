@@ -3,31 +3,32 @@
   "description": "Aima.Extension.Tests",
   "authors": [ "AimaTeam" ],
   "packOptions": {
-    "tags": [ "" ],
-    "owners": ["Mr.hai"],
-    "licenseUrl": "aaaa",
+    "tags": [ ".net extensions" ],
+    "owners": [ "Mr.hai" ],
+    "licenseUrl": "",
     "repository": {
       "type": "git",
-      "url": ""
+      "url": "https://git.oschina.net/AimaTeam/Aima.Extension.git"
     }
   },
+  "testRunner": "unit",
   "frameworks": {
     "net40": {
       "buildOptions": {
         "define": [ "Net40" ]
       },
       "dependencies": {
-        "Aima.Extension": "1.0.2-160101",
         "xunit": "1.9.2",
         "xunit.runner.visualstudio": "2.1.0"
       }
     },
     "net45": {
+      "imports": ["net451"],
       "frameworkAssemblies": {
         "System.Runtime": "4.0.0.0"
       },
+      "buildOptions": { "define": [ "Net45" ] },
       "dependencies": {
-        "Aima.Extension": "1.0.2-160101",
         "xunit": "2.1.0",
         "xunit.core": "2.1.0",
         "xunit.extensibility.core": "2.1.0",
@@ -41,10 +42,9 @@
         "System.Xml": "4.0.0.0"
       },
       "buildOptions": {
-        "define": [ "ASYNC" ]
+        "define": [ "Net46" ]
       },
       "dependencies": {
-        "Aima.Extension": "1.0.2-160101",
         "xunit": "2.1.0",
         "xunit.core": "2.1.0",
         "xunit.extensibility.core": "2.1.0",
@@ -56,16 +56,16 @@
     "netcoreapp1.0": {
       "imports": [ "dnxcore50", "portable-net45+win8" ],
       "buildOptions": {
-        "define": [ "ASYNC", "COREFX", "XUNIT2", "SQLITE" ]
+        "define": [ "COREFX" ]
       },
       "dependencies": {
         "xunit": "2.1.0",
-        "dotnet-test-xunit": "1.0.0-rc2-build10015",
-        "Aima.Extension": "1.0.2-160101"
+        "dotnet-test-xunit": "1.0.0-rc2-build10015"
       }
     }
   },
   "dependencies": {
+    "Aima.Extension": "1.0.2-160101",
     "xunit.runner.console": "2.1.0"
   }
 }
