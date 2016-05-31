@@ -1,9 +1,9 @@
 ﻿/***************************************************************
 *
 *   AimaTeam开源项目（版权所有：copyright@aimaTeam.com）       
-*   尽管它开源,我们真心希望您可以为我们保留的版权信息，谢谢
+*   Dear,我们真心希望您可以为我们保留的版权信息,o(∩_∩)o 
 ----------------------------------------------------------------
-*   作   者：Hai he
+*   作   者：Mr.Hai
 *   日   期：2015/12/8 1:37:34
 *   博   客：https://hehai.aimateam.com
 *   说   明：
@@ -23,40 +23,30 @@ namespace Aima.Extension
         /// <summary>
         /// 复制一个对象
         /// </summary>
-        /// <typeparam name="Tsrc"></typeparam>
+        /// <typeparam name="TSrcType"></typeparam>
         /// <param name="src"></param>
         /// <returns></returns>
-        public static Tsrc Copy<Tsrc>(this Tsrc src) where Tsrc : class, new()
+        public static TSrcType Copy<TSrcType>(this TSrcType src) where TSrcType : class, new()
         {
             var sp = new object();
             throw new System.NotImplementedException();
-            // return default(Tsrc);
+            // return default(TSrcType);
         }
 
         /// <summary>
         /// 复制一个对象
         /// </summary>
-        /// <typeparam name="Tsrc"></typeparam>
+        /// <typeparam name="TSrcType"></typeparam>
+        /// <typeparam name="TDestType"></typeparam>
         /// <param name="src"></param>
         /// <returns></returns>
-        public static TTarget CopyTo<Tsrc, TTarget>(this Tsrc src)
-            where Tsrc : class, new()
-            where TTarget : class, new()
+        public static TDestType CopyTo<TSrcType, TDestType>(this TSrcType src)
+            where TSrcType : class, new()
+            where TDestType : class, new()
         {
             var sp = new object();
             throw new System.NotImplementedException();
-            // return default(Tsrc);
-        }
-
-        /// <summary>
-        /// 将src对象的值粘贴到pasteTarget对象
-        /// </summary>
-        /// <typeparam name="Tsrc"></typeparam>
-        /// <param name="src"></param>
-        /// <returns></returns>
-        public static void PasteTo<Tsrc>(this Tsrc src, Tsrc pasteTarget) where Tsrc : class, new()
-        {
-            throw new System.NotImplementedException();
+            // return default(TSrcType);
         }
     }
 }

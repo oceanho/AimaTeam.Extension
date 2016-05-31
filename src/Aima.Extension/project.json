@@ -5,7 +5,7 @@
   "description": "AimaTeam Shared Library",
   "authors": [ "AimaTeam" ],
   "packOptions": {
-    "tags": [ "extension methods", "AimaTeam", "Aima", "Aima.Extension" ],
+    "tags": [ "extension methods", "AimaTeam", ".net extension methods", "Aima.Extension" ],
     "projectUrl": "http://git.oschina.net/AimaTeam/Aima.Extension",
     "licenseUrl": "http://git.oschina.net/AimaTeam/Aima.Extension/blob/master/LICENSE"
   },
@@ -34,7 +34,8 @@
         "define": [ "Net46" ]
       }
     },
-    "dnxcore50": {
+    "netstandard1.3": {
+      "imports": [ "dotnet5.4","dnxcore50" ],
       "dependencies": {
         "NETStandard.Library": "1.5.0-rc2-24027",
         "System.Linq.Expressions": "4.0.11-rc2-24027",

@@ -17,9 +17,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Aima.Extension")]
 #endif
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Aima.Extension Shared Library")]
-[assembly: AssemblyCopyright("Copyright © Mr.Hai 2015")]
+[assembly: AssemblyCompany("XiWu.NET")]
+[assembly: AssemblyProduct("AimaTeam Shared Library")]
+[assembly: AssemblyCopyright("Copyright © AimaTeam 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

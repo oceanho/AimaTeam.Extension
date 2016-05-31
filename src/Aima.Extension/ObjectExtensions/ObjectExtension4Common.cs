@@ -1,9 +1,9 @@
 ﻿/***************************************************************
 *
 *   AimaTeam开源项目（版权所有：copyright@aimaTeam.com）       
-*   尽管它开源,我们真心希望您可以为我们保留的版权信息，谢谢
+*   Dear,我们真心希望您可以为我们保留的版权信息,o(∩_∩)o 
 ----------------------------------------------------------------
-*   作   者：Hai he
+*   作   者：Mr.Hai
 *   日   期：2015/12/8 1:37:34
 *   博   客：https://hehai.aimateam.com
 *   说   明：
@@ -24,15 +24,15 @@ namespace Aima.Extension
         /// 验证对象是否为空引用。如果是空引用，返回True，不是返回False
         /// 注：针对String类型的数据，加入IsNullOrEmpty()方法进行了校验
         /// </summary>
-        /// <param name="obj_src">指定校验的object对象</param>
+        /// <param name="objSrc">指定校验的object对象</param>
         /// <returns></returns>
-        public static bool IsNullReference(this object obj_src)
+        public static bool IsNullReference(this object objSrc)
         {
-            if (obj_src != null)
+            if (objSrc != null)
             {
-                if (obj_src.GetType() == typeof(string))
+                if (objSrc.GetType() == typeof(string))
                 {
-                    return obj_src.ToString().IsNullOrEmp();
+                    return objSrc.ToString().IsNullOrEmp();
                 }
                 return false;
             }
