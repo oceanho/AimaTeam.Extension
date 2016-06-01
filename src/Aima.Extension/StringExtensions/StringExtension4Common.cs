@@ -19,7 +19,8 @@ using System.Collections.Generic;
 
 namespace Aima.Extension
 {
-    using Util;
+    using Utilities;
+
     /// <summary>
     /// 字符串常用操作而定义的扩展方法静态类
     /// </summary>
@@ -105,7 +106,7 @@ namespace Aima.Extension
         /// <returns></returns>
         public static List<TResult> Split2<TResult>(this string src, params char[] splitChars)
         {
-            Ensure.IsNotNull(src, "Split2:src");
+            EnsureUtility.IsNotNull(src, "Split2:src");
             List<TResult> list = new List<TResult>();
             Func<string, TResult> converthandler = DelegateStaticConvertMethods<TResult>.ChangeTypeFromString;
 
@@ -162,7 +163,7 @@ namespace Aima.Extension
         /// <returns></returns>
         public static bool StartsWithAny(this string src, StringComparison comparison, params string[] anyStrings)
         {
-            Ensure.IsNotNull(src, "Split2:StartsWithAny");
+            EnsureUtility.IsNotNull(src, "Split2:StartsWithAny");
             foreach (var str in anyStrings)
                 if (src.StartsWith(str, comparison)) return true;
             return false;
@@ -188,7 +189,7 @@ namespace Aima.Extension
         /// <returns></returns>
         public static bool EndsWithAny(this string src, StringComparison comparison, params string[] anyStrings)
         {
-            Ensure.IsNotNull(src, "Split2:EndsWithAny 'src'");
+            EnsureUtility.IsNotNull(src, "Split2:EndsWithAny 'src'");
             foreach (var str in anyStrings)
                 if (src.EndsWith(str, comparison)) return true;
             return false;
@@ -268,7 +269,6 @@ namespace Aima.Extension
         /// </summary>
         /// <param name="src">字符串数据源</param>
         /// <param name="indexStartChar">开始截取字符串的字符检索char</param>
-        /// <param name="indexStartCharPosition">从第几个indexCharPosition开始截取</param>
         /// <returns></returns>
         public static string SubString(this string src, char indexStartChar)
         {

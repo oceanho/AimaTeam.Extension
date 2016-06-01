@@ -16,12 +16,12 @@
 
 using System;
 
-namespace Aima.Extension.Util
+namespace Aima.Extension.Utilities
 {
     /// <summary>
     /// Exception的创建类
     /// </summary>
-    internal sealed class ExceptionUtil
+    internal sealed class ExceptionUtility
     {
         /// <summary>
         /// 创建一个指定Exception类型的Exception对象

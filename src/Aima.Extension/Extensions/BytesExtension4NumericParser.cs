@@ -1,4 +1,4 @@
-﻿using Aima.Extension.Util;
+﻿using Aima.Extension.Utilities;
 using Aima.Extension.Common;
 using System;
 using System.Collections.Generic;
@@ -500,7 +500,7 @@ namespace Aima.Extension
 
         private static byte[] GetBytes(byte[] bytes, int startIndex, int typeByteLen, byte autoApeendByteIfLengthLess, bool isAppendToEnd)
         {
-            Ensure.IsNotNull(bytes, "bytes,指定的转换字节数组长度不能是null,请确认");
+            EnsureUtility.IsNotNull(bytes, "bytes,指定的转换字节数组长度不能是null,请确认");
 
             int byteLen = bytes.Length;
             byte[] _bytes = new byte[typeByteLen];

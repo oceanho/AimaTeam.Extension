@@ -19,7 +19,7 @@ using System.Collections.Generic;
 
 namespace Aima.Extension
 {
-    using Util;
+    using Utilities;
 
     /// <summary>
     /// 字符串的文件路径,文件目录操作而定义的扩展方法静态类
@@ -42,7 +42,7 @@ namespace Aima.Extension
             if (!string.IsNullOrEmpty(parentLevel))
             {
                 if (!parentLevel.StartsWith("../"))
-                    throw ExceptionUtil.Create<FormatException>("unsopport “{0}” starts with the parentLevel,should be {1}".Format2(parentLevel, "../"));
+                    throw ExceptionUtility.Create<FormatException>("unsopport “{0}” starts with the parentLevel,should be {1}".Format2(parentLevel, "../"));
                 intParentLevel = parentLevel.GetStringFindedCount("../");
                 subVirtualPath = parentLevel.Substring((parentLevel.GetStringFindedCount("../") * 3));
             }
@@ -57,7 +57,7 @@ namespace Aima.Extension
         /// <returns></returns>
         public static string GetDirectoryPath(this string path, int parentLevel)
         {
-            Ensure.IsNotNull(path, "path");
+            EnsureUtility.IsNotNull(path, "path");
             if (parentLevel <= 0) return path;
 
             List<int> slashcharItemIndex = null;
@@ -85,7 +85,7 @@ namespace Aima.Extension
         /// <returns></returns>
         public static string GetDirectoryPath(this string path, int parentLevel, string subVirtualPath)
         {
-            Ensure.IsNotNull(path, "path");
+            EnsureUtility.IsNotNull(path, "path");
             if (parentLevel <= 0) return path;
 
             List<int> slashcharItemIndex = null;

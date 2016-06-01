@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-using Aima.Extension.Util;
+using Aima.Extension.Utilities;
 using System.ComponentModel;
 using System.Reflection;
 
@@ -54,7 +54,7 @@ namespace Aima.Extension
                 }
                 valueIndex++;
             }
-            throw ExceptionUtil.Create<InvalidCastException>("the {0} invalid".Format2(enumsrc));
+            throw ExceptionUtility.Create<InvalidCastException>("the {0} invalid".Format2(enumsrc));
         }
 
         /// <summary>

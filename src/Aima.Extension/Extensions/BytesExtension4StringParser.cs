@@ -1,4 +1,4 @@
-﻿using Aima.Extension.Util;
+﻿using Aima.Extension.Utilities;
 using Aima.Extension.Common;
 using System;
 using System.Collections.Generic;
@@ -27,7 +27,6 @@ namespace Aima.Extension
         /// 使用Utf-8编码方式获取参数:src字节数组获取到一个字符串
         /// </summary>
         /// <param name="src">指定的字节数组</param>
-        /// <param name="encoder">指定的编码方式</param>
         /// <param name="startIndex">开始转换的为字符的字节数组索引</param>
         /// <returns></returns>
         public static string GetStringByUtf8(this IEnumerable<byte> src, int startIndex)

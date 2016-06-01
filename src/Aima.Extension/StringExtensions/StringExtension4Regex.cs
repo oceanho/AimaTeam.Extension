@@ -19,7 +19,7 @@ using System.Text.RegularExpressions;
 
 namespace Aima.Extension
 {
-    using Util;
+    using Utilities;
 
     /// <summary>
     /// 字符串的正则表达式操作而定义的扩展方法静态类
@@ -48,7 +48,7 @@ namespace Aima.Extension
         /// <returns></returns>
         public static bool IsRegexMath(this string src, string pattern, RegexOptions regexOptions)
         {
-            Ensure.IsNotNull(src, "IsRegexMath(src)");
+            EnsureUtility.IsNotNull(src, "IsRegexMath(src)");
             return Regex.IsMatch(src, pattern, regexOptions);
         }
 

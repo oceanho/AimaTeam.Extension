@@ -15,13 +15,13 @@
 ****************************************************************/
 
 using System;
-namespace Aima.Extension.Util
+namespace Aima.Extension.Utilities
 {
     /// <summary>
     /// 断言工具
     /// </summary>
-    internal sealed class Ensure
-    {
+    internal sealed class EnsureUtility
+    {        
         /// <summary>
         /// 断言一个对象不为空,为空抛出异常
         /// </summary>
@@ -30,13 +30,13 @@ namespace Aima.Extension.Util
         internal static void IsNotNull(object obj, string argumentName)
         {
             if (obj == null)
-                throw ExceptionUtil.Create<ArgumentNullException>(argumentName);
+                throw ExceptionUtility.Create<ArgumentNullException>(argumentName);
 
             var type = obj.GetType();
             if (type == typeof(string))
             {
-                if (Extension.StringExtension4Common.IsNullOrEmp(obj.ToString()))
-                    throw ExceptionUtil.Create<ArgumentNullException>(argumentName);
+                if (StringExtension4Common.IsNullOrEmp(obj.ToString()))
+                    throw ExceptionUtility.Create<ArgumentNullException>(argumentName);
             }
         }
     }

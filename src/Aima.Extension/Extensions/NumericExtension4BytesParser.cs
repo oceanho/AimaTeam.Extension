@@ -1,4 +1,4 @@
-﻿using Aima.Extension.Util;
+﻿using Aima.Extension.Utilities;
 using Aima.Extension.Common;
 using System;
 using System.Collections.Generic;

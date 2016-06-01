@@ -20,7 +20,7 @@ using System.Security.Cryptography;
 
 namespace Aima.Extension
 {
-    using Util;
+    using Utilities;
 
     /// <summary>
     /// 字符串的安全操作而定义的扩展方法静态类
@@ -74,7 +74,7 @@ namespace Aima.Extension
             if (src.IsNullOrEmp())
             {
                 if (throwArgumentNullExceptionIfsrcIsNull)
-                    throw ExceptionUtil.Create<ArgumentNullException>("Parameter 'src' is null or empty");
+                    throw ExceptionUtility.Create<ArgumentNullException>("Parameter 'src' is null or empty");
                 return src;
             }
 
@@ -126,7 +126,7 @@ namespace Aima.Extension
             if (src.IsNullOrEmp())
             {
                 if (throwArgumentNullExceptionIfsrcIsNull)
-                    throw ExceptionUtil.Create<ArgumentNullException>("Parameter 'src' is null or empty");
+                    throw ExceptionUtility.Create<ArgumentNullException>("Parameter 'src' is null or empty");
                 return src;
             }
 

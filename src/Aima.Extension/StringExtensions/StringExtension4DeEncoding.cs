@@ -19,7 +19,7 @@ using System.Text;
 
 namespace Aima.Extension
 {
-    using Util;
+    using Utilities;
 
     /// <summary>
     /// 字符串的编码与解码操作而定义的扩展方法静态类
@@ -49,7 +49,7 @@ namespace Aima.Extension
         public static string ToBase64String(this string src, Encoding encoding)
         {
 #if COREFX
-            Ensure.IsNotNull(src, "src");
+            EnsureUtility.IsNotNull(src, "src");
             byte[] bytes = encoding.GetBytes(src);
             return Convert.ToBase64String(bytes);
 #else
@@ -67,7 +67,7 @@ namespace Aima.Extension
         /// <returns></returns>
         public static string ToBase64String(this string src, Encoding encoding, Base64FormattingOptions base64FrmOption)
         {
-            Ensure.IsNotNull(src, "src");
+            EnsureUtility.IsNotNull(src, "src");
             byte[] bytes = encoding.GetBytes(src);
             return Convert.ToBase64String(bytes, base64FrmOption);
         }
@@ -92,7 +92,7 @@ namespace Aima.Extension
         {
 
 #if COREFX
-            Ensure.IsNotNull(src, "src");
+            EnsureUtility.IsNotNull(src, "src");
             byte[] bytes = Convert.FromBase64String(src);
             return encoding.GetString(bytes,0,bytes.Length);
 #else
@@ -111,7 +111,7 @@ namespace Aima.Extension
         /// <returns></returns>
         public static string FromBase64ToString(this string src, Encoding encoding, Base64FormattingOptions base64FrmOption)
         {
-            Ensure.IsNotNull(src, "src");
+            EnsureUtility.IsNotNull(src, "src");
             byte[] bytes = Convert.FromBase64String(src);
             return encoding.GetString(bytes);
         }

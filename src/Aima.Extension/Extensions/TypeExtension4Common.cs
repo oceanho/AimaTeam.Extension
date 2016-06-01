@@ -7,8 +7,16 @@ using System.Collections.Generic;
 
 namespace Aima.Extension
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class TypeExtension4Common
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public static string Name(this Type type)
         {
 #if COREFX
@@ -18,6 +26,11 @@ namespace Aima.Extension
 #endif
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public static bool IsValueType(this Type type)
         {
 #if COREFX
@@ -26,6 +39,11 @@ namespace Aima.Extension
             return type.IsValueType;
 #endif
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public static bool IsEnum(this Type type)
         {
 #if COREFX
@@ -34,6 +52,12 @@ namespace Aima.Extension
             return type.IsEnum;
 #endif
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public static bool IsGenericType(this Type type)
         {
 #if COREFX
@@ -42,6 +66,12 @@ namespace Aima.Extension
             return type.IsGenericType;
 #endif
         }
+
+        /// <summary>
+        /// 判断指定的 type 是否是一个接口对象
+        /// </summary>
+        /// <param name="type">指定的type类型</param>
+        /// <returns></returns>
         public static bool IsInterface(this Type type)
         {
 #if COREFX
@@ -51,11 +81,22 @@ namespace Aima.Extension
 #endif
         }
 #if COREFX
+        /// <summary>
+        /// 获取指定的 type 上所有的特性Attribute
+        /// </summary>
+        /// <param name="type">指定的type类型</param>
+        /// <param name="inherit">是否允许在继承的对象上搜索</param>
+        /// <returns></returns>
         public static IEnumerable<Attribute> GetCustomAttributes(this Type type, bool inherit)
         {
             return type.GetTypeInfo().GetCustomAttributes(inherit);
         }
 
+        /// <summary>
+        /// 获取指定 type 的 <see cref="TypeCode" />
+        /// </summary>
+        /// <param name="type">指定的type类型</param>
+        /// <returns></returns>
         public static TypeCode GetTypeCode(this Type type)
         {
             if (type == null) return TypeCode.Empty;
@@ -69,7 +110,11 @@ namespace Aima.Extension
             }
             return TypeCode.Object;
         }
-        static readonly Dictionary<Type, TypeCode> typeCodeLookup = new Dictionary<Type, TypeCode>
+
+        /// <summary>
+        /// 定义 CSharp Type 与 TypeCode映射关系字典
+        /// </summary>
+        internal static readonly Dictionary<Type, TypeCode> typeCodeLookup = new Dictionary<Type, TypeCode>
         {
             {typeof(bool), TypeCode.Boolean },
             {typeof(byte), TypeCode.Byte },
@@ -89,11 +134,23 @@ namespace Aima.Extension
             {typeof(ulong), TypeCode.UInt64 },
         };
 #else
+        /// <summary>
+        /// 获取指定 type 的 <see cref="TypeCode" />
+        /// </summary>
+        /// <param name="type">指定的type类型</param>
+        /// <returns></returns>
         public static TypeCode GetTypeCode(this Type type)
         {
             return Type.GetTypeCode(type);
         }
 #endif
+        /// <summary>
+        /// 获取指定 type 的 公共（public修饰符）方法
+        /// </summary>
+        /// <param name="type">指定的type类型</param>
+        /// <param name="name">指定的查找的方法名称</param>
+        /// <param name="types">指定的type类型搜索列表</param>
+        /// <returns></returns>
         public static MethodInfo GetPublicInstanceMethod(this Type type, string name, Type[] types)
         {
 #if COREFX

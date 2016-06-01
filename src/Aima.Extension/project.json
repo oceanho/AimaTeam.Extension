@@ -1,5 +1,5 @@
-﻿{
-  "title": "AimaTeam Shared Library",
+{
+  "title": "AimaTeam Library",
   "copyright": "AimaTeam",
   "version": "1.0.2-160101",
   "description": "AimaTeam Shared Library",
@@ -45,6 +45,7 @@
     }
   },
   "buildOptions": {
-    "xmlDoc": true
+    "xmlDoc": true,
+    "warningsAsErrors": true
   }
 }

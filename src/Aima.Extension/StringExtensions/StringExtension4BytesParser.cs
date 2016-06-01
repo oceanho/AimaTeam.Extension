@@ -54,7 +54,6 @@ namespace Aima.Extension
         /// 使用Utf-8编码方式获取参数:src字节数组获取到一个字符串
         /// </summary>
         /// <param name="src">指定的字节数组</param>
-        /// <param name="encoding">指定的编码方式</param>
         /// <param name="startIndex">开始转换的为字符的字节数组索引</param>
         /// <param name="count">指定转换的字节数组个数</param>
         /// <returns></returns>
