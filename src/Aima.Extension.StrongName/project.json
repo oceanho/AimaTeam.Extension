@@ -1,5 +1,13 @@
 ﻿{
   "version": "1.0.0-*",
+  "packOptions": {
+    "owners": [
+      "Mr.hai",
+      "AimaTeam"
+    ],
+    "tags": [ ".net extension methods", "extension method", "extension library" ],
+    "summary": "The AimaTeam Shared Library"
+  },
   "buildOptions": {
     "xmlDoc": true,
     "keyFile": "../../Aima.Extension.snk",
