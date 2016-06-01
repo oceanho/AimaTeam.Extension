@@ -35,9 +35,9 @@ namespace Aima.Extension
         /// </summary>
         /// <param name="src">指定的字符串</param>
         /// <returns></returns>
-        public static string GetMD5As32(this string src)
+        public static string GetMD5_32(this string src)
         {
-            return src.GetMD5As32(_defaultEncoding, _defaultThrowArgumentNullExceptionIfsrcIsNull);
+            return src.GetMD5_32(_defaultEncoding, _defaultThrowArgumentNullExceptionIfsrcIsNull);
         }
 
         /// <summary>
@@ -46,9 +46,9 @@ namespace Aima.Extension
         /// <param name="src">指定的字符串</param>
         /// <param name="encoding">指定的编码格式</param>
         /// <returns></returns>
-        public static string GetMD5As32(this string src, Encoding encoding)
+        public static string GetMD5_32(this string src, Encoding encoding)
         {
-            return src.GetMD5As32(encoding, _defaultThrowArgumentNullExceptionIfsrcIsNull);
+            return src.GetMD5_32(encoding, _defaultThrowArgumentNullExceptionIfsrcIsNull);
         }
 
         /// <summary>
@@ -57,9 +57,9 @@ namespace Aima.Extension
         /// <param name="src">指定的字符串</param>
         /// <param name="throwArgumentNullExceptionIfsrcIsNull">指定一个参数值，该参数表示当src源字符串为string.Empty或null时,是否抛出ArgumentNullException异常、如果指定为True,满足src为空,将抛出ArgumentNullException,指定为False,返回src原字符</param>
         /// <returns></returns>
-        public static string GetMD5As32(this string src, bool throwArgumentNullExceptionIfsrcIsNull)
+        public static string GetMD5_32(this string src, bool throwArgumentNullExceptionIfsrcIsNull)
         {
-            return src.GetMD5As32(_defaultEncoding, throwArgumentNullExceptionIfsrcIsNull);
+            return src.GetMD5_32(_defaultEncoding, throwArgumentNullExceptionIfsrcIsNull);
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Aima.Extension
         /// <param name="encoding">指定的编码格式</param>
         /// <param name="throwArgumentNullExceptionIfsrcIsNull">指定一个参数值，该参数表示当src源字符串为string.Empty或null时,是否抛出ArgumentNullException异常、如果指定为True,满足src为空,将抛出ArgumentNullException,指定为False,返回src原字符</param>
         /// <returns></returns>
-        public static string GetMD5As32(this string src, Encoding encoding, bool throwArgumentNullExceptionIfsrcIsNull)
+        public static string GetMD5_32(this string src, Encoding encoding, bool throwArgumentNullExceptionIfsrcIsNull)
         {
             if (src.IsNullOrEmp())
             {
@@ -98,9 +98,9 @@ namespace Aima.Extension
         /// </summary>
         /// <param name="src">指定的字符串</param>
         /// <returns></returns>
-        public static string GetMD5As16(this string src)
+        public static string GetMD5_16(this string src)
         {
-            return src.GetMD5As16(_defaultEncoding, _defaultThrowArgumentNullExceptionIfsrcIsNull);
+            return src.GetMD5_16(_defaultEncoding, _defaultThrowArgumentNullExceptionIfsrcIsNull);
         }
 
         /// <summary>
@@ -109,9 +109,9 @@ namespace Aima.Extension
         /// <param name="src">指定的字符串</param>
         /// <param name="throwArgumentNullExceptionIfsrcIsNull">指定一个参数值，该参数表示当src源字符串为string.Empty或null时,是否抛出ArgumentNullException异常、如果指定为True,满足src为空,将抛出ArgumentNullException,指定为False,返回src原字符</param>
         /// <returns></returns>
-        public static string GetMD5As16(this string src, bool throwArgumentNullExceptionIfsrcIsNull)
+        public static string GetMD5_16(this string src, bool throwArgumentNullExceptionIfsrcIsNull)
         {
-            return src.GetMD5As16(_defaultEncoding, throwArgumentNullExceptionIfsrcIsNull);
+            return src.GetMD5_16(_defaultEncoding, throwArgumentNullExceptionIfsrcIsNull);
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Aima.Extension
         /// <param name="encoding">指定的编码格式</param>
         /// <param name="throwArgumentNullExceptionIfsrcIsNull">指定一个参数值，该参数表示当src源字符串为string.Empty或null时,是否抛出ArgumentNullException异常、如果指定为True,满足src为空,将抛出ArgumentNullException,指定为False,返回src原字符</param>
         /// <returns></returns>
-        public static string GetMD5As16(this string src, Encoding encoding, bool throwArgumentNullExceptionIfsrcIsNull)
+        public static string GetMD5_16(this string src, Encoding encoding, bool throwArgumentNullExceptionIfsrcIsNull)
         {
             if (src.IsNullOrEmp())
             {
@@ -130,7 +130,7 @@ namespace Aima.Extension
                 return src;
             }
 
-            return src.GetMD5As32(encoding).Substring(8, 16);
+            return src.GetMD5_32(encoding).Substring(8, 16);
         }
     }
 }
