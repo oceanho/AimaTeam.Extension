@@ -16,12 +16,13 @@
 
 using System;
 using System.Linq;
-using Aima.Extension.Utilities;
 using System.ComponentModel;
 using System.Reflection;
 
 namespace Aima.Extension
-{ 
+{
+    using Utilities;
+
     /// <summary>
     /// 枚举常用操作而定义的扩展方法静态类
     /// </summary>

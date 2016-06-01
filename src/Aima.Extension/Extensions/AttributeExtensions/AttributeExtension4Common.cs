@@ -22,15 +22,5 @@ namespace Aima.Extension
     /// </summary>
     public static partial class AttributeExtension4Common
     {
-        /// <summary>
-        /// 获取Attribute的标注说明描述信息
-        /// </summary>
-        /// <param name="attrsrc">指定的Attribute对象</param>
-        /// <returns></returns>
-        public static string GetDescriptorText(this Attribute attrsrc)
-        {
-            throw new NotImplementedException();
-            // return attrsrc.GetType().GetField().GetDescriptionAttributes().FirstOrDefault().Description;
-        }
     }
 }
