@@ -23,7 +23,7 @@ namespace Aima.Extension
     /// <summary>
     /// MemberInfo （FiledInfo / PropertyInfo）等实现了 ICustomAttributeProvider接口的Attribute操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class MemberInfoExtension4Attribute
+    public static partial class MemberInfoExtensionAttribute
     {
         /// <summary>
         /// 获取某个类型的TAttribute属性集合列表,没有指定的Attribute类型,返回 MemberInfo 上所有的Attribute

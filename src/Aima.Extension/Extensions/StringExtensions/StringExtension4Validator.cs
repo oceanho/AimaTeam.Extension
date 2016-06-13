@@ -21,7 +21,7 @@ namespace Aima.Extension
     /// <summary>
     /// 字符串验证操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class StringExtension4Validator
+    public static partial class StringExtensionValidator
     {
         private static readonly string _base64Regex = "^[a-z0-9+/]+$";
         /// <summary>

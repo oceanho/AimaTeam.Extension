@@ -20,7 +20,7 @@ namespace Aima.Extension
     /// <summary>
     /// 字符串的DateTime数据类型转换操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class StringExtension4DateTimeParser
+    public static partial class StringExtensionDateTimeParser
     {
         /// <summary>
         /// 转换指定时间格式的字符串为指定时间天的最小时间，也就是指定时间天的零点,零分,零秒

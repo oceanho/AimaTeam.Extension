@@ -3,13 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace AimaTeam.Common
 {
     using Aima.Extension;
-    using System.Reflection;
-
+#if COREFX
+    /*
+    GetTypeInfo()是一个扩展方法,在System.Reflection命名空间下。
+    .net core 需要GetType() 需要通过 GetTypeInfo().AsType()才能实现反射操作。    
+    */
+    using System.Reflection;    
+#endif
     /// <summary>
     /// 定义一个表示枚举
     /// </summary>
@@ -64,7 +68,7 @@ namespace AimaTeam.Common
         public EnumInfoCollection(Type enumType)
         {
             if (!enumType.IsEnum())
-                throw new ArgumentException("参数enumType类型无效,请确认enumType参数的类型是一个合法的枚举。", innerException: null);
+                throw new ArgumentException("参数enumType类型无效,请确认参数enumType的类型是一个合法的枚举。", innerException: null);
             this.enumType = enumType;
 
             EnumInfo<TValue> enumInfo;
@@ -75,10 +79,10 @@ namespace AimaTeam.Common
                 enumInfo.Value = (TValue)item;
                 enumInfo.Name = Enum.GetName(enumType, item);
 #if COREFX
-                enumInfo.CustomerAttributes = MemberInfoExtension4Attribute.GetAttributes(enumType.GetTypeInfo().AsType().GetField(enumInfo.Name),true).ToList();                
+                enumInfo.CustomerAttributes = MemberInfoExtensionAttribute.GetAttributes(enumType.GetTypeInfo().AsType().GetField(enumInfo.Name),true).ToList();                
 #else
-                enumInfo.CustomerAttributes = MemberInfoExtension4Attribute.GetAttributes(enumType.GetField(enumInfo.Name), true).ToList();
-#endif                
+                enumInfo.CustomerAttributes = MemberInfoExtensionAttribute.GetAttributes(enumType.GetField(enumInfo.Name), true).ToList();
+#endif
                 enumInfo.Descriptor = (DescriptionAttribute)enumInfo.CustomerAttributes.FirstOrDefault(p => p.GetType() == typeof(DescriptionAttribute));
                 enumInfoList.Add(enumInfo);
             }

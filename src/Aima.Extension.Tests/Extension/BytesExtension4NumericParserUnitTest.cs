@@ -3,7 +3,7 @@ using Aima.Extension;
 
 namespace Aima.Extension.Tests
 {
-    public class BytesExtension4NumericParserUnitTest
+    public class BytesExtensionNumericParserUnitTest
     {
         [Fact]
         public void Instance()

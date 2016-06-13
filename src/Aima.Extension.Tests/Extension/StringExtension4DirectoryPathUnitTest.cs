@@ -5,7 +5,7 @@ namespace Aima.Extension.Tests
     using Aima.Extension;
 
 
-    public class StringExtension4DirectoryPathUnitTest
+    public class StringExtensionDirectoryPathUnitTest
     {
         [Fact]
         public void Instance() {

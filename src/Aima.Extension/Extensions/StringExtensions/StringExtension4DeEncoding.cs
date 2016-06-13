@@ -24,7 +24,7 @@ namespace Aima.Extension
     /// <summary>
     /// 字符串的编码与解码操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class StringExtension4DeEncoding
+    public static partial class StringExtensionDeEncoding
     {
         private static readonly Encoding _defaultEncoding = Encoding.UTF8;
 
@@ -48,13 +48,7 @@ namespace Aima.Extension
         /// <returns></returns>
         public static string ToBase64String(this string src, Encoding encoding)
         {
-#if COREFX
-            EnsureUtility.IsNotNull(src, "src");
-            byte[] bytes = encoding.GetBytes(src);
-            return Convert.ToBase64String(bytes);
-#else
             return Convert.ToBase64String(encoding.GetBytes(src));
-#endif
         }
 
 #if !COREFX

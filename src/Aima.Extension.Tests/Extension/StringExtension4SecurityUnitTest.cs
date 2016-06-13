@@ -5,7 +5,7 @@ namespace Aima.Extension.Tests
     using Aima.Extension;
 
 
-    public class StringExtension4SecurityUnitTest
+    public class StringExtensionSecurityUnitTest
     {
         [Fact]
         public void GetMD5_32()

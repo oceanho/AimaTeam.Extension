@@ -6,7 +6,7 @@ namespace Aima.Extension.Tests
     using Aima.Extension;
     using System.ComponentModel;
 
-    public class EnumExtension4CommonUnitTest
+    public class EnumExtensionCommonUnitTest
     {
         [Fact]
         public void Instance()

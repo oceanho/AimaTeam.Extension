@@ -9,7 +9,7 @@ namespace Aima.Extension
     /// <summary>
     ///字节数组与Numeric常用转换操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class BytesExtension4NumericParser
+    public static partial class BytesExtensionNumericParser
     {
         private static readonly bool _defaultIsAppendToEnd = true;
         private static readonly byte _defaultAutoApeendByteIfLengthLess = 0x00;

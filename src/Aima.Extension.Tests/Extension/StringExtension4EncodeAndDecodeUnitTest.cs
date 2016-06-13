@@ -5,7 +5,7 @@ namespace Aima.Extension.Tests
     using Aima.Extension;
 
 
-    public class StringExtension4EncodeAndDecodeUnitTest
+    public class StringExtensionEncodeAndDecodeUnitTest
     {
         [Fact]
         public void ToBase64String()

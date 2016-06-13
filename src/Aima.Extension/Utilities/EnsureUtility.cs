@@ -35,7 +35,7 @@ namespace Aima.Extension.Utilities
             var type = obj.GetType();
             if (type == typeof(string))
             {
-                if (StringExtension4Common.IsNullOrEmp(obj.ToString()))
+                if (StringExtensionCommon.IsNullOrEmpty2(obj.ToString()))
                     throw ExceptionUtility.Create<ArgumentNullException>(argumentName);
             }
         }

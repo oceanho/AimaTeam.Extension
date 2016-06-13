@@ -24,7 +24,7 @@ namespace Aima.Extension
     /// <summary>
     /// 字符串常用操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class StringExtension4Common
+    public static partial class StringExtensionCommon
     {
         private static char _defaultSplitChar = ',';     // 字符串默认拆分标记
 
@@ -33,7 +33,7 @@ namespace Aima.Extension
         /// </summary>
         /// <param name="src">源字符串</param>
         /// <returns></returns>
-        public static bool IsNullOrEmp(this string src)
+        public static bool IsNullOrEmpty2(this string src)
         {
             return string.IsNullOrEmpty(src);
         }
@@ -46,7 +46,7 @@ namespace Aima.Extension
         /// <returns>满足条件返回true，否则返回false</returns>
         public static bool LengthIsLessThan(this string src, int compareLength)
         {
-            if (src.IsNullOrEmp()) return compareLength == 0;
+            if (src.IsNullOrEmpty2()) return compareLength == 0;
             return src.Length < compareLength;
         }
 
@@ -58,7 +58,7 @@ namespace Aima.Extension
         /// <returns>满足条件返回true，否则返回false</returns>
         public static bool LengthIsLessThanOrEqual(this string src, int compareLength)
         {
-            if (src.IsNullOrEmp()) return compareLength == 0;
+            if (src.IsNullOrEmpty2()) return compareLength == 0;
             return src.Length <= compareLength;
         }
 
@@ -128,15 +128,15 @@ namespace Aima.Extension
         /// <returns>满足条件返回true，否则返回false</returns>
         public static bool LengthIsLessThanOther(this string src, string compareString)
         {
-            if (!src.IsNullOrEmp() && !compareString.IsNullOrEmp())
+            if (!src.IsNullOrEmpty2() && !compareString.IsNullOrEmpty2())
             {
                 return src.Length < compareString.Length;
             }
-            else if (!src.IsNullOrEmp() && compareString.IsNullOrEmp())
+            else if (!src.IsNullOrEmpty2() && compareString.IsNullOrEmpty2())
             {
                 return src.Length == 0;
             }
-            else if (src.IsNullOrEmp() && !compareString.IsNullOrEmp())
+            else if (src.IsNullOrEmpty2() && !compareString.IsNullOrEmpty2())
             {
                 return compareString.Length == 0;
             }
@@ -204,7 +204,7 @@ namespace Aima.Extension
         public static int GetCharFindedCount(this string src, char findChar)
         {
             int record = 0;
-            if (src.IsNullOrEmp()) return 0;
+            if (src.IsNullOrEmpty2()) return 0;
             for (int i = 0; i < src.Length; i++)
             {
                 if (src[i] == findChar) { record++; }
@@ -233,8 +233,8 @@ namespace Aima.Extension
         public static int GetStringFindedCount(this string src, string findString, StringComparison stringComparison)
         {
 
-            if (src.IsNullOrEmp()) return 0;
-            if (findString.IsNullOrEmp()) return 0;
+            if (src.IsNullOrEmpty2()) return 0;
+            if (findString.IsNullOrEmpty2()) return 0;
 
             int record = 0;
             int foreachRecord = 0;

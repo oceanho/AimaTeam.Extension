@@ -9,7 +9,7 @@ namespace Aima.Extension
     /// <summary>
     ///字节数组与string常用转换操作而定义的扩展方法静态类
     /// </summary>
-    public static class BytesExtension4StringParser
+    public static class BytesExtensionStringParser
     {
         #region --> GetStringByUtf8()
         /// <summary>

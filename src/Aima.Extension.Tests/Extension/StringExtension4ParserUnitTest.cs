@@ -5,7 +5,7 @@ namespace Aima.Extension.Tests
     using Aima.Extension;
 
 
-    public class StringExtension4ParserUnitTest
+    public class StringExtensionParserUnitTest
     {
         [Fact]
         public void ParserTo()

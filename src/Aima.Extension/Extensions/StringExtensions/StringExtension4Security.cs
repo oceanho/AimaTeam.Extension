@@ -25,7 +25,7 @@ namespace Aima.Extension
     /// <summary>
     /// 字符串的安全操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class StringExtension4Security
+    public static partial class StringExtensionSecurity
     {
         private static readonly Encoding _defaultEncoding = Encoding.UTF8;
         private static readonly bool _defaultThrowArgumentNullExceptionIfsrcIsNull = false;
@@ -71,7 +71,7 @@ namespace Aima.Extension
         /// <returns></returns>
         public static string GetMD5_32(this string src, Encoding encoding, bool throwArgumentNullExceptionIfsrcIsNull)
         {
-            if (src.IsNullOrEmp())
+            if (src.IsNullOrEmpty2())
             {
                 if (throwArgumentNullExceptionIfsrcIsNull)
                     throw ExceptionUtility.Create<ArgumentNullException>("Parameter 'src' is null or empty");
@@ -123,7 +123,7 @@ namespace Aima.Extension
         /// <returns></returns>
         public static string GetMD5_16(this string src, Encoding encoding, bool throwArgumentNullExceptionIfsrcIsNull)
         {
-            if (src.IsNullOrEmp())
+            if (src.IsNullOrEmpty2())
             {
                 if (throwArgumentNullExceptionIfsrcIsNull)
                     throw ExceptionUtility.Create<ArgumentNullException>("Parameter 'src' is null or empty");

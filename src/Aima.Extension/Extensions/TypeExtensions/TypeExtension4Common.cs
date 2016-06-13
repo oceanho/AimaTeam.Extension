@@ -10,7 +10,7 @@ namespace Aima.Extension
     /// <summary>
     /// 
     /// </summary>
-    public static class TypeExtension4Common
+    public static class TypeExtensionCommon
     {
         /// <summary>
         /// 

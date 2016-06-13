@@ -25,7 +25,7 @@ namespace Aima.Extension
     /// <summary>
     /// 字符串与字节数组之间的常用转换操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class StringExtension4BytesParser
+    public static partial class StringExtensionBytesParser
     {
         #region --> GetBytesByUtf8()
         /// <summary>

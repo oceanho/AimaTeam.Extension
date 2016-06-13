@@ -20,7 +20,7 @@ namespace Aima.Extension
     /// <summary>
     /// 字符串的数据类型转换操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class StringExtension4Parser
+    public static partial class StringExtensionParser
     { 
         /// <summary>
         /// 将一个字符串转换为指定类型的对象，若转换失败返回默认值，转换成功返回转换出来的值

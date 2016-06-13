@@ -19,7 +19,7 @@ namespace Aima.Extension
     /// <summary>
     /// 时间DateTime转换操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class DateTimeExtension4Formater
+    public static partial class DateTimeExtensionFormater
     {
         private static readonly string _frmt_yyyyMMdd = "yyyyMMdd";
         private static readonly string _frmt_yyyyMMddHHmmssms = "yyyyMMddHHmmssms";

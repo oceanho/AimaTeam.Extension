@@ -24,7 +24,7 @@ namespace Aima.Extension
     /// <summary>
     /// 字符串的文件路径,文件目录操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class StringExtension4DirectoryPath
+    public static partial class StringExtensionDirectoryPath
     {
         private static readonly int backslashAscci = 47; // 反斜线 Ascci
         private static readonly int slashcharAscci = 92; // 正斜线 Ascci

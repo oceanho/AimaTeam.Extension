@@ -26,7 +26,7 @@ namespace Aima.Extension
     /// <summary>
     /// 枚举常用操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class EnumExtension4Common
+    public static partial class EnumExtensionCommon
     {
         /// <summary>
         /// 获取枚举的键

@@ -22,7 +22,7 @@ namespace Aima.Extension
     /// <summary>
     /// 字符串比较操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class StringExtension4Comparer
+    public static partial class StringExtensionComparer
     {
         /// <summary>
         /// 忽略大小写、比较两个字符串是否相等，相等返回True,否则返回False（Equals选项:StringComparison.OrdinalIgnoreCase）

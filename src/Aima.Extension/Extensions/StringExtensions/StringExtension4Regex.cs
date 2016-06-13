@@ -24,7 +24,7 @@ namespace Aima.Extension
     /// <summary>
     /// 字符串的正则表达式操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class StringExtension4Regex
+    public static partial class StringExtensionRegex
     {        
         private static RegexOptions _defaultRegexOptions = RegexOptions.Compiled | RegexOptions.IgnoreCase;
 

@@ -20,7 +20,7 @@ namespace Aima.Extension
     /// <summary>
     /// 时间DateTime常用操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class DateTimeExtension4Common
+    public static partial class DateTimeExtensionCommon
     {
         /// <summary>
         /// 获取dateTime日期的起始时间值,返回这一天中最开始的时间点（比如：2015-12-07 23:33:39,返回2015-12-07 00:00:00）

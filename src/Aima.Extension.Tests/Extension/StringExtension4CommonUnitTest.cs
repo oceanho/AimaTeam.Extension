@@ -5,7 +5,7 @@ namespace Aima.Extension.Tests
     using Aima.Extension;
 
 
-    public class StringExtension4CommonUnitTest
+    public class StringExtensionCommonUnitTest
     {
         [Fact]
         public void GetStringFindedCount()

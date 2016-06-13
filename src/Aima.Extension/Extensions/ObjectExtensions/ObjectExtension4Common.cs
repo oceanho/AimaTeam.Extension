@@ -18,7 +18,7 @@ namespace Aima.Extension
     /// <summary>
     /// Object类型常用操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class ObjectExtension4Common
+    public static partial class ObjectExtensionCommon
     {
         /// <summary>
         /// 验证对象是否为空引用。如果是空引用，返回True，不是返回False
@@ -32,7 +32,7 @@ namespace Aima.Extension
             {
                 if (objSrc.GetType() == typeof(string))
                 {
-                    return objSrc.ToString().IsNullOrEmp();
+                    return objSrc.ToString().IsNullOrEmpty2();
                 }
                 return false;
             }

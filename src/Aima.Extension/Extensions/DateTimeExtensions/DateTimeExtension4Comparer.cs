@@ -20,7 +20,7 @@ namespace Aima.Extension
     /// <summary>
     /// 时间DateTime比较操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class DateTimeExtension4Comparer
+    public static partial class DateTimeExtensionComparer
     {
         /// <summary>
         /// 比较2个时间是否相等，相等返回True,否则返回False

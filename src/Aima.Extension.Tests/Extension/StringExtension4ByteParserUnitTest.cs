@@ -2,7 +2,7 @@
 
 namespace Aima.Extension.Tests
 {
-    public class StringExtension4ByteParserUnitTest
+    public class StringExtensionByteParserUnitTest
     {
         [Fact]
         public void Instance()

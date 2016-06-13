@@ -20,7 +20,7 @@ namespace Aima.Extension
     /// <summary>
     /// Attribute标记常用操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class AttributeExtension4Common
+    public static partial class AttributeExtensionCommon
     {
     }
 }

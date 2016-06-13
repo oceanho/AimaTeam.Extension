@@ -18,7 +18,7 @@ namespace Aima.Extension
     /// <summary>
     /// Object类型常用操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class ObjectExtension4CopyPaste
+    public static partial class ObjectExtensionCopyPaste
     {
         /// <summary>
         /// 复制一个对象
