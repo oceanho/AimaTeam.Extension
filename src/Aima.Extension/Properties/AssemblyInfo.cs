@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("AimaTeam.NET")]
 [assembly: AssemblyProduct("AimaTeam Shared Library")]
-[assembly: AssemblyCopyright("Copyright © AimaTeam 2015")]
+[assembly: AssemblyCopyright("Copyright © AimaTeam 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

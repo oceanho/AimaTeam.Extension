@@ -8,10 +8,6 @@ namespace Aima.Extension.Tests
     public class StringExtensionDirectoryPathUnitTest
     {
         [Fact]
-        public void Instance() {
-        }
-
-        [Fact]
         public void GetParentPath()
         {
             string _string = "E:\\data\\scripts\\js\\jquery";
