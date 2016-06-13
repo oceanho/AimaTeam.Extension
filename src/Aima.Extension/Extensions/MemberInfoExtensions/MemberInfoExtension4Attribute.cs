@@ -26,6 +26,25 @@ namespace Aima.Extension
     public static partial class MemberInfoExtension4Attribute
     {
         /// <summary>
+        /// 获取某个类型的TAttribute属性集合列表,没有指定的Attribute类型,返回 MemberInfo 上所有的Attribute
+        /// </summary>
+        /// <param name="memberInfo">指定的获取TAttribute的对象类型</param>
+        /// <param name="inherit">搜索此成员的继承链以查找这些属性，则为 true；否则为 false。属性和事件中忽略此参数</param>
+        /// <returns>类型的TAttribute属性集合列表,没有指定的Attribute类型,返回长度为零的TAttribute数组</returns>
+        public static IEnumerable<Attribute> GetAttributes(this System.Reflection.MemberInfo memberInfo, bool inherit)
+        {
+#if COREFX
+            foreach (var itemAttr in System.Reflection.CustomAttributeExtensions.GetCustomAttributes(memberInfo,inherit))
+#else
+            foreach (var itemAttr in memberInfo.GetCustomAttributes(inherit))
+#endif
+            {
+                yield return (Attribute)itemAttr;
+            }
+            yield break;
+        }
+
+        /// <summary>
         /// 获取某个类型的TAttribute属性集合列表,没有指定的Attribute类型,返回长度为零的TAttribute数组
         /// </summary>
         /// <typeparam name="TAttribute">指定的Attribute类型</typeparam>

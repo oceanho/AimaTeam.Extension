@@ -151,7 +151,7 @@ namespace Aima.Extension
         /// <param name="name">指定的查找的方法名称</param>
         /// <param name="types">指定的type类型搜索列表</param>
         /// <returns></returns>
-        public static MethodInfo GetPublicInstanceMethod(this Type type, string name, Type[] types)
+        public static MethodInfo GetPublicMethodInfo(this Type type, string name, Type[] types)
         {
 #if COREFX
             var method = type.GetMethod(name, types);

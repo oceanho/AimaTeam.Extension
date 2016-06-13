@@ -29,9 +29,9 @@ namespace Aima.Extension.Utilities
         /// <returns></returns>
         public static bool IsExistNullOrEmpty(params string[] arguments)
         {
-            if (args != null)
+            if (arguments != null)
             {
-                foreach (var item in args)
+                foreach (var item in arguments)
                     if (string.IsNullOrEmpty(item))
                         return true;
             }
