@@ -31,46 +31,46 @@ namespace Aima.Extension
         /// <summary>
         /// 获取枚举的键
         /// </summary>
-        /// <param name="enumsrc">枚举对象</param>
+        /// <param name="enumSrc">枚举对象</param>
         /// <returns></returns>
-        public static string GetEnumKey(this Enum enumsrc)
+        public static string GetKey(this Enum enumSrc)
         {
-            return Enum.GetName(enumsrc.GetType(), enumsrc);
+            return Enum.GetName(enumSrc.GetType(), enumSrc);
         }
 
         /// <summary>
         /// 获取枚举的值
         /// </summary>
-        /// <param name="enumsrc">枚举对象</param>
+        /// <param name="enumSrc">枚举对象</param>
         /// <returns></returns>
-        public static EnumValueType GetEnumValue<EnumValueType>(this Enum enumsrc)
+        public static TValue GetValue<TValue>(this Enum enumSrc)
         {
             int valueIndex = 0;
-            string enumsrcKey = enumsrc.GetEnumKey();
-            foreach (var item in Enum.GetNames(enumsrc.GetType()))
+            string enumSrcKey = enumSrc.GetKey();
+            foreach (var item in Enum.GetNames(enumSrc.GetType()))
             {
-                if (enumsrcKey.EqualIgnoreCase(item))
+                if (enumSrcKey.EqualIgnoreCase(item))
                 {
-                    return (EnumValueType)Enum.GetValues(enumsrc.GetType()).GetValue(valueIndex);
+                    return (TValue)Enum.GetValues(enumSrc.GetType()).GetValue(valueIndex);
                 }
                 valueIndex++;
             }
-            throw ExceptionUtility.Create<InvalidCastException>("the {0} invalid".Format2(enumsrc));
+            throw ExceptionUtility.Create<InvalidCastException>("The {0} invalid".Format2(enumSrc));
         }
 
         /// <summary>
         /// 获取枚举的描述,没有System.ComponentModel.DescriptionAttribute标记返回string.Empty
         /// </summary>
-        /// <param name="enumsrc">枚举对象</param>
+        /// <param name="enumSrc">枚举对象</param>
         /// <returns></returns>
-        public static string GetDescriptorText(this Enum enumsrc)
+        public static string GetDescriptorText(this Enum enumSrc)
         {
 
 #if COREFX
-            FieldInfo field =System.Reflection.TypeExtensions.GetField(enumsrc.GetType(), enumsrc.ToString());
+            FieldInfo field =System.Reflection.TypeExtensions.GetField(enumSrc.GetType(), enumSrc.ToString());
             DescriptionAttribute[] desciptors = field.GetDescriptionAttributes().ToArray();
 #else
-            FieldInfo field = enumsrc.GetType().GetField(enumsrc.ToString());
+            FieldInfo field = enumSrc.GetType().GetField(enumSrc.ToString());
             DescriptionAttribute[] desciptors = field.GetDescriptionAttributes().ToArray();
 #endif
             if (desciptors.Length > 0)
@@ -81,31 +81,54 @@ namespace Aima.Extension
         /// <summary>
         /// 获取int枚举类型的值
         /// </summary>
-        /// <param name="enumsrc">枚举对象</param>
+        /// <param name="enumSrc">枚举对象</param>
         /// <returns></returns>
-        public static int GetEnumValueAsInt(this Enum enumsrc)
+        public static int GetValueAsInt(this Enum enumSrc)
         {
-            return enumsrc.GetEnumValue<int>();
+            return enumSrc.GetValue<int>();
         }
 
         /// <summary>
         /// 获取byte枚举类型的值
         /// </summary>
-        /// <param name="enumsrc">枚举对象</param>
+        /// <param name="enumSrc">枚举对象</param>
         /// <returns></returns>
-        public static int GetEnumValueAsByte(this Enum enumsrc)
+        public static int GetValueAsByte(this Enum enumSrc)
         {
-            return enumsrc.GetEnumValue<byte>();
+            return enumSrc.GetValue<byte>();
         }
 
         /// <summary>
         /// 获取Long/Int64枚举类型的值
         /// </summary>
-        /// <param name="enumsrc">枚举对象</param>
+        /// <param name="enumSrc">枚举对象</param>
         /// <returns></returns>
-        public static long GetEnumValueAsLong(this Enum enumsrc)
+        public static long GetValueAsLong(this Enum enumSrc)
         {
-            return enumsrc.GetEnumValue<long>();
+            return enumSrc.GetValue<long>();
+        }
+
+        /// <summary>
+        /// 获取指定参数枚举值,包含了键/值以及Attribute附加属性的等等的 <see cref="EnumInfo{TValue}"/> 对象
+        /// </summary>
+        /// <typeparam name="TValue">指定枚举没的枚举值的。net数据类型</typeparam>
+        /// <param name="enumSrc">指定的枚举键值</param>
+        /// <returns></returns>
+        public static EnumInfo<TValue> GetEnumInfo<TValue>(this Enum enumSrc)
+        {
+            return enumSrc.GetEnumInfoCollection<TValue>().FirstOrDefault(p => p.Name == enumSrc.GetKey());
+        }
+
+        /// <summary>
+        /// 获取指定参数枚举值,包含了键/值以及Attribute附加属性的等等的 <see cref="EnumInfoCollection{TValue}"/> 集合
+        /// </summary>
+        /// <typeparam name="TValue">指定枚举没的枚举值的。net数据类型</typeparam>
+        /// <param name="enumSrc">指定的枚举键值</param>
+        /// <exception cref="ArgumentException"></exception>
+        /// <returns></returns>
+        public static EnumInfoCollection<TValue> GetEnumInfoCollection<TValue>(this Enum enumSrc)
+        {
+            return new EnumInfoCollection<TValue>(enumSrc.GetType());
         }
     }
 }

@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-namespace AimaTeam.Common
+namespace Aima.Extension
 {
-    using Aima.Extension;
 #if COREFX
     /*
     GetTypeInfo()是一个扩展方法,在System.Reflection命名空间的TypeExtension类下面。
@@ -111,7 +110,7 @@ namespace AimaTeam.Common
         }
 
         /// <summary>
-        /// 获取指定类型
+        /// 获取元素个数
         /// </summary>
         public int Count
         {
@@ -122,7 +121,7 @@ namespace AimaTeam.Common
         }
 
         /// <summary>
-        /// 
+        /// 获取元素是否只读
         /// </summary>
         public bool IsReadOnly
         {
@@ -133,7 +132,7 @@ namespace AimaTeam.Common
         }
 
         /// <summary>
-        /// 
+        /// 添加元素
         /// </summary>
         /// <param name="item"></param>
         public void Add(EnumInfo<TValue> item)
@@ -142,7 +141,7 @@ namespace AimaTeam.Common
         }
 
         /// <summary>
-        /// 
+        /// 清空所有元素
         /// </summary>
         public void Clear()
         {
@@ -150,7 +149,7 @@ namespace AimaTeam.Common
         }
 
         /// <summary>
-        /// 
+        /// 是否保护某个元素
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
@@ -160,17 +159,17 @@ namespace AimaTeam.Common
         }
 
         /// <summary>
-        /// 
+        /// 复制元素
         /// </summary>
-        /// <param name="array"></param>
-        /// <param name="arrayIndex"></param>
+        /// <param name="array">目标数组</param>
+        /// <param name="arrayIndex">开始下标</param>
         public void CopyTo(EnumInfo<TValue>[] array, int arrayIndex)
         {
             ((ICollection<EnumInfo<TValue>>)EnumInfoList).CopyTo(array, arrayIndex);
         }
 
         /// <summary>
-        /// 
+        /// 获取元素枚举器
         /// </summary>
         /// <returns></returns>
         public IEnumerator<EnumInfo<TValue>> GetEnumerator()
@@ -179,7 +178,7 @@ namespace AimaTeam.Common
         }
 
         /// <summary>
-        /// 
+        /// 移除元素
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
@@ -189,7 +188,7 @@ namespace AimaTeam.Common
         }
 
         /// <summary>
-        /// 
+        /// 获取元素枚举器
         /// </summary>
         /// <returns></returns>
         IEnumerator IEnumerable.GetEnumerator()

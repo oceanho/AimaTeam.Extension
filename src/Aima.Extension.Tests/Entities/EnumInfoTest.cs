@@ -6,7 +6,7 @@ using Xunit;
 
 namespace AimaCore.Tests.Entities
 {
-    using AimaTeam.Common;
+    using Aima.Extension;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     public class EnumInfoTest

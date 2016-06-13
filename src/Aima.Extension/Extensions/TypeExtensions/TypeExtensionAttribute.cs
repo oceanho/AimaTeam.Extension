@@ -25,7 +25,7 @@ namespace Aima.Extension
     /// <summary>
     /// System.Type -> Attribute标记常用操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class AttributeProvider4Common
+    public static partial class TypeExtensionAttribute
     {
         /// <summary>
         /// 获取某个类型的TAttribute属性集合列表,没有指定的Attribute类型,返回长度为零的TAttribute数组

@@ -17,14 +17,14 @@ namespace Aima.Extension.Tests
         public void GetEnumKey()
         {
             PlatformEnumtor platform = PlatformEnumtor.Linux;
-            Assert.True(platform.GetEnumKey().EqualIgnoreCase("Linux"));
+            Assert.True(platform.GetKey().EqualIgnoreCase("Linux"));
         }
 
         [Fact]
         public void GetEnumValue()
         {
             PlatformEnumtor platform = PlatformEnumtor.Linux;
-            Assert.True(platform.GetEnumValue<int>() == 2);
+            Assert.True(platform.GetValue<int>() == 2);
         }
 
         [Fact]
