@@ -1,0 +1,56 @@
+﻿{
+  "version": "1.0.0-*",
+  "packOptions": {
+    "owners": [
+      "hehai",
+      "AimaTeam"
+    ],
+    "tags": [ ".net extension methods", "extension method", "extension library" ],
+    "summary": "The AimaTeam Shared Library"
+  },
+  "buildOptions": {
+    "xmlDoc": true,
+    "keyFile": "../../AimaTeam.Extension.snk",
+    "compile": {
+      "include": "../AimaTeam.Extension/**/*.cs",
+      "exclude": "../AimaTeam.Extension/obj/"
+    },
+    "warningsAsErrors": true
+  },
+  "frameworks": {
+    "net40": {
+      "buildOptions": {
+        "define": [ "Net40" ]
+      }
+    },
+    "net45": {
+      "buildOptions": {
+        "define": [ "Net45" ]
+      }
+    },
+    "net451": {
+      "buildOptions": {
+        "define": [ "Net451" ]
+      }
+    },
+    "dnx451": {
+      "frameworkAssemblies": {
+        "System.Data": "4.0.0.0",
+        "System.Xml": "4.0.0.0"
+      },
+      "buildOptions": {
+        "define": [ "Net46" ]
+      }
+    },
+    "netstandard1.3": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.5.0-rc2-24027",
+        "System.Linq.Expressions": "4.0.11-rc2-24027",
+        "System.Reflection.TypeExtensions": "4.1.0-rc2-24027",
+        "System.Security.Cryptography.Algorithms": "4.1.0-rc2-24027"
+      },
+      "buildOptions": { "define": [ "COREFX" ] }
+    }
+  }
+}
