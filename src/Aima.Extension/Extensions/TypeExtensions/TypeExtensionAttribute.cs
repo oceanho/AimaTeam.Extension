@@ -3,10 +3,10 @@
  *   Copyright © 2015-2115 AimaTeam
  * 
  *   author：he hai
- *   time：2015/01/01 09:09:09
- *   mail：OpenSource@AimaTeam.com 
+ *   time：2015/05/08
+ *   mail：opensource@aimateam.org 
  *   QQ Group：139849106
- *   Web Site：https://www.aimateam.com
+ *   Web Site：https://www.aimateam.org
  *   
  *   Licensed to the AimaTeam Open Source under one or more agreements.
  *   The AimaTeam Open Source licenses this file to you under the MIT license. 
