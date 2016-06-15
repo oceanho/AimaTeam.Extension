@@ -1,5 +1,4 @@
 ﻿using Xunit;
-using Aima.Extension;
 
 namespace Aima.Extension.Tests
 {
