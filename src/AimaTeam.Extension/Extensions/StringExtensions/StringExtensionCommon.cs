@@ -292,7 +292,7 @@ namespace AimaTeam.Extension
         /// </summary>
         /// <param name="src">字符串数据源</param>
         /// <param name="indexStartChar">开始截取字符串的字符检索char</param>
-        /// <param name="indexStartCharPosition">从第几个indexCharPosition开始截取</param>
+        /// <param name="indexStartCharPosition">从第几个indexCharPosition开始截取（比如：indexStartChar在字符串中出现了4次,该参数为0表示,从indexStartChar出现的第一个位置开始截取）</param>
         /// <returns></returns>
         public static string SubString(this string src, char indexStartChar, int indexStartCharPosition)
         {
