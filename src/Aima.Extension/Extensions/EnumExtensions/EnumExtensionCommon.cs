@@ -93,7 +93,7 @@ namespace Aima.Extension
         /// </summary>
         /// <param name="enumSrc">枚举对象</param>
         /// <returns></returns>
-        public static int GetValueAsByte(this Enum enumSrc)
+        public static byte GetValueAsByte(this Enum enumSrc)
         {
             return enumSrc.GetValue<byte>();
         }
