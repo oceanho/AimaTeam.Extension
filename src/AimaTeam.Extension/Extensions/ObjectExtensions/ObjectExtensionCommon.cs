@@ -4,7 +4,7 @@
  * 
  *   author：he hai
  *   time：2015/05/08
- *   mail：opensource@aimateam.org 
+  
  *   QQ Group：139849106
  *   Web Site：https://www.aimateam.org
  *   
