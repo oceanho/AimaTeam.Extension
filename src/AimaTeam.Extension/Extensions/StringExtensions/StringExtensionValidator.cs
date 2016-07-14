@@ -38,9 +38,9 @@ namespace AimaTeam.Extension
         /// <summary>
         /// 验证字符串是否是一个有效的Base64编码格式的字符串
         /// </summary>
-        /// <param name="src"></param>
+        /// <param name="src">指定待验证的是否是合法Base64编码的字符串</param>
         /// <returns></returns>
-        public static bool IsValidBASE64String(this string src)
+        public static bool IsValidBase64String(this string src)
         {
             return src.IsRegexMath(_base64Regex, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
         }
