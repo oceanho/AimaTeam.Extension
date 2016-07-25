@@ -52,6 +52,9 @@ namespace AimaTeam.Extension
             var enumerator = enumerableSource.GetEnumerator();
             while (enumerator.MoveNext())
             {
+                if (mvIndex++ < startIndex)
+                    continue;
+
                 if (mvIndex > maxMvIndex )
                     break;
                 yield return enumerator.Current;
@@ -77,6 +80,9 @@ namespace AimaTeam.Extension
             var enumerator = enumerableSource.GetEnumerator();
             while (enumerator.MoveNext())
             {
+                if (mvIndex++ < startIndex)
+                    continue;
+
                 if (mvIndex > endIndex)
                     break;
                 yield return enumerator.Current;
