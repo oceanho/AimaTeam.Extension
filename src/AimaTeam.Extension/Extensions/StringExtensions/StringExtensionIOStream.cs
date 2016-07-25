@@ -30,23 +30,24 @@
 using System.Text;
 using System.Linq;
 using AimaTeam.Extension.Common;
+using System.IO;
 
 namespace AimaTeam.Extension
 {
     /// <summary>
     /// 字符串与字节数组之间的常用转换操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class StringExtensionBytesParser
+    public static partial class StringExtensionIOStream
     {
-        #region --> GetBytesByUtf8()
+        #region --> GetStreamByUtf8()
         /// <summary>
         /// 使用Utf-8的编码方式获取参数:src字节数组获取到一个字符串
         /// </summary>
         /// <param name="src">指定的字节数组</param>
         /// <returns></returns>
-        public static byte[] GetBytesByUtf8(this string src)
+        public static Stream GetStreamByUtf8(this string src)
         {
-            return src.GetBytesByUtf8(0);
+            return src.GetStreamByUtf8(0);
         }
 
 
@@ -56,9 +57,9 @@ namespace AimaTeam.Extension
         /// <param name="src">指定的字节数组</param>
         /// <param name="startIndex">开始转换的为字符的字节数组索引</param>
         /// <returns></returns>
-        public static byte[] GetBytesByUtf8(this string src, int startIndex)
+        public static Stream GetStreamByUtf8(this string src, int startIndex)
         {
-            return src.GetBytesByUtf8(startIndex, src.Length);
+            return src.GetStreamByUtf8(startIndex, src.Length);
         }
 
         /// <summary>
@@ -68,228 +69,228 @@ namespace AimaTeam.Extension
         /// <param name="startIndex">开始转换的为字符的字节数组索引</param>
         /// <param name="count">指定转换的字节数组个数</param>
         /// <returns></returns>
-        public static byte[] GetBytesByUtf8(this string src, int startIndex, int count)
+        public static Stream GetStreamByUtf8(this string src, int startIndex, int count)
         {
-            return src.GetBytesByEncoding(Encodings._utf8, startIndex, count);
+            return src.GetStreamByEncoding(Encodings._utf8, startIndex, count);
         }
         #endregion        
 
-        #region --> GetBytesByAscii()
+        #region --> GetStreamByAscii()
 
         /// <summary>
-        /// 使用Ascii编码.将src数组转换为byte数组
+        /// 使用Ascii编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>
         /// <returns></returns>
-        public static byte[] GetBytesByAscii(this string src)
+        public static Stream GetStreamByAscii(this string src)
         {
-            return src.GetBytesByAscii(0);
+            return src.GetStreamByAscii(0);
         }
 
         /// <summary>
-        /// 使用Ascii编码.将src数组转换为byte数组
+        /// 使用Ascii编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>        
         /// <param name="index">指定待转换的数组索引开始值</param>
         /// <returns></returns>
-        public static byte[] GetBytesByAscii(this string src, int index)
+        public static Stream GetStreamByAscii(this string src, int index)
         {
-            return src.GetBytesByAscii(index, src.Length);
+            return src.GetStreamByAscii(index, src.Length);
         }
 
         /// <summary>
-        /// 使用Ascii编码.将src数组转换为byte数组
+        /// 使用Ascii编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>        
         /// <param name="index">指定待转换的数组索引开始值</param>
-        /// <param name="count">指定从开始长度的字节数组置起,转换的byte数组个数</param>
+        /// <param name="count">指定从开始长度的字节数组置起,转换的Stream对象个数</param>
         /// <returns></returns>
-        public static byte[] GetBytesByAscii(this string src, int index, int count)
+        public static Stream GetStreamByAscii(this string src, int index, int count)
         {
-            return src.GetBytesByEncoding(Encodings._ascii, index, count);
+            return src.GetStreamByEncoding(Encodings._ascii, index, count);
         }
         #endregion        
 
-        #region --> GetBytesByUnicode()
+        #region --> GetStreamByUnicode()
 
         /// <summary>
-        /// 使用Unicode编码.将src数组转换为byte数组
+        /// 使用Unicode编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>
         /// <returns></returns>
-        public static byte[] GetBytesByUnicode(this string src)
+        public static Stream GetStreamByUnicode(this string src)
         {
-            return src.GetBytesByUnicode(0);
+            return src.GetStreamByUnicode(0);
         }
 
         /// <summary>
-        /// 使用Unicode编码.将src数组转换为byte数组
+        /// 使用Unicode编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>        
         /// <param name="index">指定待转换的数组索引开始值</param>
         /// <returns></returns>
-        public static byte[] GetBytesByUnicode(this string src, int index)
+        public static Stream GetStreamByUnicode(this string src, int index)
         {
-            return src.GetBytesByUnicode(index, src.Length);
+            return src.GetStreamByUnicode(index, src.Length);
         }
 
         /// <summary>
-        /// 使用Unicode编码.将src数组转换为byte数组
+        /// 使用Unicode编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>        
         /// <param name="index">指定待转换的数组索引开始值</param>
-        /// <param name="count">指定从开始长度的字节数组置起,转换的byte数组个数</param>
+        /// <param name="count">指定从开始长度的字节数组置起,转换的Stream对象个数</param>
         /// <returns></returns>
-        public static byte[] GetBytesByUnicode(this string src, int index, int count)
+        public static Stream GetStreamByUnicode(this string src, int index, int count)
         {
-            return src.GetBytesByEncoding(Encodings._unicode, index, count);
+            return src.GetStreamByEncoding(Encodings._unicode, index, count);
         }
         #endregion
 
-        #region --> GetBytesByGbk()
+        #region --> GetStreamByGbk()
 
         /// <summary>
-        /// 使用Gbk编码.将src数组转换为byte数组
+        /// 使用Gbk编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>
         /// <returns></returns>
-        public static byte[] GetBytesByGbk(this string src)
+        public static Stream GetStreamByGbk(this string src)
         {
-            return src.GetBytesByGbk(0);
+            return src.GetStreamByGbk(0);
         }
 
         /// <summary>
-        /// 使用Gbk编码.将src数组转换为byte数组
+        /// 使用Gbk编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>        
         /// <param name="index">指定待转换的数组索引开始值</param>
         /// <returns></returns>
-        public static byte[] GetBytesByGbk(this string src, int index)
+        public static Stream GetStreamByGbk(this string src, int index)
         {
-            return src.GetBytesByGbk(index, src.Length);
+            return src.GetStreamByGbk(index, src.Length);
         }
 
         /// <summary>
-        /// 使用Gbk编码.将src数组转换为byte数组
+        /// 使用Gbk编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>        
         /// <param name="index">指定待转换的数组索引开始值</param>
-        /// <param name="count">指定从开始长度的字节数组置起,转换的byte数组个数</param>
+        /// <param name="count">指定从开始长度的字节数组置起,转换的Stream对象个数</param>
         /// <returns></returns>
-        public static byte[] GetBytesByGbk(this string src, int index, int count)
+        public static Stream GetStreamByGbk(this string src, int index, int count)
         {
-            return src.GetBytesByEncoding(Encodings._gbk, index, count);
+            return src.GetStreamByEncoding(Encodings._gbk, index, count);
         }
         #endregion
 
-        #region --> GetBytesByGb2312()
+        #region --> GetStreamByGb2312()
 
         /// <summary>
-        /// 使用Gb2312编码.将src数组转换为byte数组
+        /// 使用Gb2312编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>
         /// <returns></returns>
-        public static byte[] GetBytesByGb2312(this string src)
+        public static Stream GetStreamByGb2312(this string src)
         {
-            return src.GetBytesByGb2312(0);
+            return src.GetStreamByGb2312(0);
         }
 
         /// <summary>
-        /// 使用Gb2312编码.将src数组转换为byte数组
+        /// 使用Gb2312编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>        
         /// <param name="index">指定待转换的数组索引开始值</param>
         /// <returns></returns>
-        public static byte[] GetBytesByGb2312(this string src, int index)
+        public static Stream GetStreamByGb2312(this string src, int index)
         {
-            return src.GetBytesByGb2312(index, src.Length);
+            return src.GetStreamByGb2312(index, src.Length);
         }
 
         /// <summary>
-        /// 使用Gb2312编码.将src数组转换为byte数组
+        /// 使用Gb2312编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>        
         /// <param name="index">指定待转换的数组索引开始值</param>
-        /// <param name="count">指定从开始长度的字节数组置起,转换的byte数组个数</param>
+        /// <param name="count">指定从开始长度的字节数组置起,转换的Stream对象个数</param>
         /// <returns></returns>
-        public static byte[] GetBytesByGb2312(this string src, int index, int count)
+        public static Stream GetStreamByGb2312(this string src, int index, int count)
         {
-            return src.GetBytesByEncoding(Encodings._gb2312, index, count);
+            return src.GetStreamByEncoding(Encodings._gb2312, index, count);
         }
         #endregion
 
-        #region --> GetBytesByEncoding()
+        #region --> GetStreamByEncoding()
 
         /// <summary>
-        /// 使用指定编码,指定开始索引,将src数组转换为byte数组
+        /// 使用指定编码,指定开始索引,将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>
         /// <param name="encoding">指定待转换使用的编码</param>
         /// <returns></returns>
-        public static byte[] GetBytesByEncoding(this string src, Encoding encoding)
+        public static Stream GetStreamByEncoding(this string src, Encoding encoding)
         {
-            return src.GetBytesByEncoding(encoding, 0);
+            return src.GetStreamByEncoding(encoding, 0);
         }
 
         /// <summary>
-        /// 使用指定编码,指定开始索引,将src数组转换为byte数组
+        /// 使用指定编码,指定开始索引,将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>
         /// <param name="encoding">指定待转换使用的编码</param>
         /// <param name="index">指定待转换的数组索引开始值</param>
         /// <returns></returns>
-        public static byte[] GetBytesByEncoding(this string src, Encoding encoding, int index)
+        public static Stream GetStreamByEncoding(this string src, Encoding encoding, int index)
         {
-            return src.GetBytesByEncoding(encoding, index, src.Length);
+            return src.GetStreamByEncoding(encoding, index, src.Length);
         }
 
         /// <summary>
-        /// 使用指定编码,指定开始索引,指定转换的个数.将src数组转换为byte数组
+        /// 使用指定编码,指定开始索引,指定转换的个数.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>
         /// <param name="encoding">指定待转换使用的编码</param>
         /// <param name="index">指定待转换的数组索引开始值</param>
-        /// <param name="count">指定从开始长度的字节数组置起,转换的byte数组个数</param>
+        /// <param name="count">指定从开始长度的字节数组置起,转换的Stream对象个数</param>
         /// <returns></returns>
-        public static byte[] GetBytesByEncoding(this string src, Encoding encoding, int index, int count)
+        public static Stream GetStreamByEncoding(this string src, Encoding encoding, int index, int count)
         {
-            return encoding.GetBytes(src.ToArray(), index, count);
+            return new MemoryStream(src.GetBytesByEncoding(encoding, index, count));
         }
         #endregion
 
-        #region --> GetBytesByDefault()
+        #region --> GetStreamByDefault()
 
         /// <summary>
-        /// 使用DefaultEncoding编码.将src数组转换为byte数组
+        /// 使用DefaultEncoding编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>
         /// <returns></returns>
-        public static byte[] GetBytesByDefault(this string src)
+        public static Stream GetStreamByDefault(this string src)
         {
-            return src.GetBytesByDefault(0);
+            return src.GetStreamByDefault(0);
         }
 
         /// <summary>
-        /// 使用DefaultEncoding编码.将src数组转换为byte数组
+        /// 使用DefaultEncoding编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>        
         /// <param name="index">指定待转换的数组索引开始值</param>
         /// <returns></returns>
-        public static byte[] GetBytesByDefault(this string src, int index)
+        public static Stream GetStreamByDefault(this string src, int index)
         {
-            return src.GetBytesByDefault(index, src.Length);
+            return src.GetStreamByDefault(index, src.Length);
         }
 
         /// <summary>
-        /// 使用DefaultEncoding编码.将src数组转换为byte数组
+        /// 使用DefaultEncoding编码.将src数组转换为Stream对象
         /// </summary>
         /// <param name="src">指定待获取字节数组String对象</param>        
         /// <param name="index">指定待转换的数组索引开始值</param>
-        /// <param name="count">指定从开始长度的字节数组置起,转换的byte数组个数</param>
+        /// <param name="count">指定从开始长度的字节数组置起,转换的Stream对象个数</param>
         /// <returns></returns>
-        public static byte[] GetBytesByDefault(this string src, int index, int count)
+        public static Stream GetStreamByDefault(this string src, int index, int count)
         {
-            return src.GetBytesByEncoding(Encodings._defaultEncoding, index, count);
+            return src.GetStreamByEncoding(Encodings._defaultEncoding, index, count);
         }
         #endregion
     }
