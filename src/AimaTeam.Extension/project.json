@@ -1,13 +1,18 @@
 {
   "title": "AimaTeam Library",
   "copyright": "AimaTeam",
-  "version": "1.0.2-160101",
+  "version": "2.0.0",
   "description": "AimaTeam Shared Library",
   "authors": [ "AimaTeam" ],
   "packOptions": {
     "tags": [ "extension methods", "AimaTeam", ".net extension methods", "AimaTeam.Extension" ],
     "projectUrl": "http://git.oschina.net/AimaTeam/AimaTeam.Extension",
     "licenseUrl": "http://git.oschina.net/AimaTeam/AimaTeam.Extension/blob/master/LICENSE"
+  },
+  "buildOptions": {
+    "xmlDoc": true,
+    "keyFile": "../../AimaTeam.Extension.snk",
+    "warningsAsErrors": true
   },
   "frameworks": {
     "net40": {

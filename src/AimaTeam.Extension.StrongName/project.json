@@ -1,11 +1,11 @@
 ﻿{
   //"version": "1.0.0-*",
-  "version": "1.0.0-beat",
+  "version": "1.0.0",
   "packOptions": {
     "owners": [
       "hehai",
       "AimaTeam"
-    ],
+    ],    
     "tags": [ ".net extension methods", "extension method", "extension library" ],
     "summary": "The AimaTeam Shared Library"
   },
