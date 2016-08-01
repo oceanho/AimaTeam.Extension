@@ -83,7 +83,7 @@ namespace AimaTeam.Extension
         /// <returns></returns>
         public static string Get_md5(this string src, Encoding encoding, bool throwArgumentNullExceptionIfsrcIsNull)
         {
-            if (src.IsNullOrEmpty2())
+            if (src.IsNullOrEmptyExt())
             {
                 if (throwArgumentNullExceptionIfsrcIsNull)
                     throw ExceptionUtility.Create<ArgumentNullException>("Parameter 'src' is null or empty");
@@ -135,7 +135,7 @@ namespace AimaTeam.Extension
         /// <returns></returns>
         public static string Get_md5Short(this string src, Encoding encoding, bool throwArgumentNullExceptionIfsrcIsNull)
         {
-            if (src.IsNullOrEmpty2())
+            if (src.IsNullOrEmptyExt())
             {
                 if (throwArgumentNullExceptionIfsrcIsNull)
                     throw ExceptionUtility.Create<ArgumentNullException>("Parameter 'src' is null or empty");

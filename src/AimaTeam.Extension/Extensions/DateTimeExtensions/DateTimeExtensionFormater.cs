@@ -43,9 +43,9 @@ namespace AimaTeam.Extension
         /// </summary>
         /// <param name="dateTime">指定转换的时间对象</param>
         /// <returns></returns>
-        public static string Format2yyyyMMdd(this DateTime dateTime)
+        public static string FormatExtyyyyMMdd(this DateTime dateTime)
         {
-            return dateTime.Format2(_frmt_yyyyMMdd);
+            return dateTime.FormatExt(_frmt_yyyyMMdd);
         }
 
         /// <summary>
@@ -53,9 +53,9 @@ namespace AimaTeam.Extension
         /// </summary>
         /// <param name="dateTime">指定转换的时间对象</param>
         /// <returns></returns>
-        public static string Format2yyyyMMddHHmmssms(this DateTime dateTime)
+        public static string FormatExtyyyyMMddHHmmssms(this DateTime dateTime)
         {
-            return dateTime.Format2(_frmt_yyyyMMddHHmmssms);
+            return dateTime.FormatExt(_frmt_yyyyMMddHHmmssms);
         }
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace AimaTeam.Extension
         /// </summary>
         /// <param name="dateTime">指定转换的时间对象</param>
         /// <returns></returns>
-        public static string Format2yyyy_MM_dd_HH_mm_ss(this DateTime dateTime)
+        public static string FormatExtyyyy_MM_dd_HH_mm_ss(this DateTime dateTime)
         {
-            return dateTime.Format2(_frmt_yyyy_MM_dd_HH_mm_ss);
+            return dateTime.FormatExt(_frmt_yyyy_MM_dd_HH_mm_ss);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace AimaTeam.Extension
         /// <param name="dateTime">指定转换的时间对象</param>
         /// <param name="format">指定转换的时间对象format字符</param>
         /// <returns></returns>
-        public static string Format2(this DateTime dateTime, string format)
+        public static string FormatExt(this DateTime dateTime, string format)
         {
             return dateTime.ToString(format);
         }
@@ -86,7 +86,7 @@ namespace AimaTeam.Extension
         /// <param name="format">指定转换的时间对象format字符</param>
         /// <param name="formatProvier">指定转换的时间的IFormatProvider接口实现类</param>
         /// <returns></returns>
-        public static string Format2(this DateTime dateTime, string format, IFormatProvider formatProvier)
+        public static string FormatExt(this DateTime dateTime, string format, IFormatProvider formatProvier)
         {
             return dateTime.ToString(format, formatProvier);
         }

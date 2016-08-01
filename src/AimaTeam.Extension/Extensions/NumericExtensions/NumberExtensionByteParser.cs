@@ -64,7 +64,7 @@ namespace AimaTeam.Extension
                 case TypeCode.Double:
                     return BitConverter.GetBytes((double)convertible);
                 default:
-                    throw new InvalidCastException("指定的convertible类型不是一个有效的CSharp数值数据类型,有效类型必须是:{0}".JoinFormat("/",
+                    throw new InvalidCastException("指定的convertible类型不是一个有效的CSharp数值数据类型,有效类型必须是:{0}".JoinAndFormat("/",
                         "Char", "Int16", "UInt16", "Int32", "UInt32", "Int64", "UInt64", "Single", "Double"));
             }
         }

@@ -67,7 +67,7 @@ namespace AimaTeam.Extension
                 }
                 valueIndex++;
             }
-            throw ExceptionUtility.Create<InvalidCastException>("The {0} invalid".Format2(enumSrc));
+            throw ExceptionUtility.Create<InvalidCastException>("The {0} invalid".FormatExt(enumSrc));
         }
 
         /// <summary>

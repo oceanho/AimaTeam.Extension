@@ -96,7 +96,7 @@ namespace AimaTeam.Extension
         public EnumInfoCollection(Type enumType)
         {
             if (!enumType.IsEnum())
-                throw new ArgumentException("参数enumType类型:{0}无效,请确认参数enumType的类型是一个合法的枚举。".Format2(nameof(enumType)), innerException: null);
+                throw new ArgumentException("参数enumType类型:{0}无效,请确认参数enumType的类型是一个合法的枚举。".FormatExt(nameof(enumType)), innerException: null);
             this.enumType = enumType;
 
             EnumInfo<TValue> enumInfo;

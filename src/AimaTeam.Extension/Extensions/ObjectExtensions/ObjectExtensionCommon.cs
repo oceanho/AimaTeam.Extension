@@ -45,7 +45,7 @@ namespace AimaTeam.Extension
             {
                 if (objSrc.GetType() == typeof(string))
                 {
-                    return objSrc.ToString().IsNullOrEmpty2();
+                    return objSrc.ToString().IsNullOrEmptyExt();
                 }
                 return false;
             }
