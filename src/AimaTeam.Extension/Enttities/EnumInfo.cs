@@ -32,15 +32,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-namespace AimaTeam.Extension
-{
 #if COREFX
     /*
-    GetTypeInfo()是一个扩展方法,在System.Reflection命名空间的TypeExtension类下面。
-    .net core GetType() 需要通过 GetTypeInfo().AsType()才能实现反射操作。    
+    GetTypeInfo()是一个扩展方法,包含在 System.Reflection.TypeExtension 类中
+    .NET Core 需要通过 GetTypeInfo().AsType()才能获取到对象的 Type    
     */
-    using System.Reflection;    
+    using System.Reflection;
 #endif
+
+namespace AimaTeam.Extension
+{
     /// <summary>
     /// 定义一个表示枚举
     /// </summary>
