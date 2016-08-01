@@ -2,7 +2,7 @@
 
 namespace AimaTeam.Extension.Tests
 {
-    public class BytesExtensionNumericParserUnitTest
+    public class BytesExtensionNumberParserUnitTest
     {
         [Fact]
         public void Instance()

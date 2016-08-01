@@ -32,14 +32,14 @@ using System.Linq;
 namespace AimaTeam.Extension
 {
     /// <summary>
-    /// Numeric与字节数组常用转换操作而定义的扩展方法静态类
+    /// Number与字节数组常用转换操作而定义的扩展方法静态类
     /// </summary>
-    public static partial class NumericExtensionBytesParser
+    public static partial class NumberExtensionBytesParser
     {
         /// <summary>
-        /// 将指定的实现了IConvertible接口的Numeric对象转换为字节数组
+        /// 将指定的实现了IConvertible接口的Number对象转换为字节数组
         /// </summary>
-        /// <param name="convertible">实现了IConvertible接口的Numeric对象</param>
+        /// <param name="convertible">实现了IConvertible接口的Number对象</param>
         /// <returns></returns>
         public static IEnumerable<byte> ToBytes(this IConvertible convertible)
         {
@@ -70,9 +70,9 @@ namespace AimaTeam.Extension
         }
 
         /// <summary>
-        /// 将指定的实现了IConvertible接口的Numeric对象转换为字节数组
+        /// 将指定的实现了IConvertible接口的Number对象转换为字节数组
         /// </summary>
-        /// <param name="convertible">实现了IConvertible接口的Numeric对象</param>
+        /// <param name="convertible">实现了IConvertible接口的Number对象</param>
         /// <returns></returns>
         public static byte[] ToBytesArray(this IConvertible convertible)
         {
@@ -80,9 +80,9 @@ namespace AimaTeam.Extension
         }
 
         /// <summary>
-        /// 将指定的实现了IConvertible接口的Numeric对象转换为字节数组
+        /// 将指定的实现了IConvertible接口的Number对象转换为字节数组
         /// </summary>
-        /// <param name="convertible">实现了IConvertible接口的Numeric对象</param>
+        /// <param name="convertible">实现了IConvertible接口的Number对象</param>
         /// <returns></returns>
         public static List<byte> ToBytesList(this IConvertible convertible)
         {

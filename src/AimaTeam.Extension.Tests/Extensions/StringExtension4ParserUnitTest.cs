@@ -10,15 +10,15 @@ namespace AimaTeam.Extension.Tests
         [Fact]
         public void ParserTo()
         {
-            string valid_NumericString = "123";
-            string invalid_NumericString = "123a";
-            Assert.True(valid_NumericString.ToInt() == 123);
-            Assert.True(valid_NumericString.To<int>() == 123);
+            string valid_NumberString = "123";
+            string invalid_NumberString = "123a";
+            Assert.True(valid_NumberString.ToInt() == 123);
+            Assert.True(valid_NumberString.To<int>() == 123);
 
 
             // invalid
-            // Assert.True(invalid_NumericString.ToInt() == -1);
-            Assert.True(invalid_NumericString.ToInt(-1) == -1);            
+            // Assert.True(invalid_NumberString.ToInt() == -1);
+            Assert.True(invalid_NumberString.ToInt(-1) == -1);            
         }
     }
 }
