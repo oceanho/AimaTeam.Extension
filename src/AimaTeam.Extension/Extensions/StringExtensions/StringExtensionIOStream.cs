@@ -265,9 +265,9 @@ namespace AimaTeam.Extension
         /// </summary>
         /// <param name="strSource">指定待获取字节数组String对象</param>
         /// <returns></returns>
-        public static Stream GetStreamByDefault(this string strSource)
+        public static Stream GetStreamByDefaultEncoding(this string strSource)
         {
-            return strSource.GetStreamByDefault(0);
+            return strSource.GetStreamByDefaultEncoding(0);
         }
 
         /// <summary>
@@ -276,9 +276,9 @@ namespace AimaTeam.Extension
         /// <param name="strSource">指定待获取字节数组String对象</param>        
         /// <param name="index">指定待转换的数组索引开始值</param>
         /// <returns></returns>
-        public static Stream GetStreamByDefault(this string strSource, int index)
+        public static Stream GetStreamByDefaultEncoding(this string strSource, int index)
         {
-            return strSource.GetStreamByDefault(index, strSource.Length);
+            return strSource.GetStreamByDefaultEncoding(index, strSource.Length);
         }
 
         /// <summary>
@@ -288,7 +288,7 @@ namespace AimaTeam.Extension
         /// <param name="index">指定待转换的数组索引开始值</param>
         /// <param name="count">指定从开始长度的字节数组置起,转换的Stream对象个数</param>
         /// <returns></returns>
-        public static Stream GetStreamByDefault(this string strSource, int index, int count)
+        public static Stream GetStreamByDefaultEncoding(this string strSource, int index, int count)
         {
             return strSource.GetStreamByEncoding(Encodings._defaultEncoding, index, count);
         }
