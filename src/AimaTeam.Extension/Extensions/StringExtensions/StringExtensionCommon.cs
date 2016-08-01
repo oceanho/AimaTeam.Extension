@@ -142,10 +142,9 @@ namespace AimaTeam.Extension
         public static TResult SplitExtAndGetResultByIndex<TResult>(this string src, int getIndex = 0, params char[] splitChars) where TResult : class
         {
             EnsureUtility.IsNotNull(src, "SplitExtAndGetResultByIndex:src");
-
             Func<string, TResult> converthandler = DelegateStaticConvertMethods<TResult>.ChangeTypeFromString;
-
             if (typeof(TResult).IsEnum()) { converthandler = DelegateStaticConvertMethods<TResult>.ChangeTypeAsEnumFromString; }
+
             splitChars = (splitChars == null || splitChars.Length == 0) ? _defaultSplitChars : splitChars;
             var splitedArraies = src.Split(splitChars);
             if (splitedArraies != null && splitedArraies.Length > getIndex)
