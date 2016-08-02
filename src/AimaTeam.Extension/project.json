@@ -48,9 +48,5 @@
       },
       "buildOptions": { "define": [ "COREFX" ] }
     }
-  },
-  "buildOptions": {
-    "xmlDoc": true,
-    "warningsAsErrors": true
   }
 }
