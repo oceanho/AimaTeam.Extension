@@ -26,6 +26,7 @@
  *
  */
 
+using AimaTeam.Extension.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -57,7 +58,8 @@ namespace AimaTeam.Extension
 
                 if (mvIndex > maxMvIndex )
                     break;
-                yield return enumerator.Current;
+                yield return SerializeUtility.DeepCopy<T>(enumerator.Current);
+                // yield return enumerator.Current;
                 // tArray[mvIndex] = enumerator.Current;
                 // mvIndex++;                
             }
@@ -85,7 +87,8 @@ namespace AimaTeam.Extension
 
                 if (mvIndex > endIndex)
                     break;
-                yield return enumerator.Current;
+                yield return SerializeUtility.DeepCopy<T>(enumerator.Current);
+                // yield return enumerator.Current;
                 // tArray[mvIndex] = enumerator.Current;
                 // mvIndex++;                
             }
