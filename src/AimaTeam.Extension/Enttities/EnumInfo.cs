@@ -43,7 +43,7 @@ using System.Linq;
 namespace AimaTeam.Extension
 {
     /// <summary>
-    /// 定义一个表示枚举
+    /// 定义一个表示单个枚举（键/值）信息的实体类
     /// </summary>
     /// <typeparam name="TValue"></typeparam>
     public class EnumInfo<TValue>
