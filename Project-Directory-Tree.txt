@@ -1,0 +1,107 @@
+﻿ tree 命令输出
+
+├─.nuget
+├─docs
+└─src
+    ├─.nuget
+    ├─AimaTeam.Extension
+    │  ├─bin
+    │  │  ├─Debug
+    │  │  │  ├─dnx451
+    │  │  │  ├─net40
+    │  │  │  ├─net45
+    │  │  │  ├─net451
+    │  │  │  └─netstandard1.3
+    │  │  └─Release
+    │  │      ├─dnx451
+    │  │      ├─net40
+    │  │      ├─net45
+    │  │      ├─net451
+    │  │      └─netstandard1.3
+    │  ├─Common
+    │  ├─Enttities
+    │  ├─Extensions
+    │  │  ├─AttributeExtensions
+    │  │  ├─ByteExtensions
+    │  │  ├─DateTimeExtensions
+    │  │  ├─EnumExtensions
+    │  │  ├─IEnumerableExtensions
+    │  │  ├─MemberInfoExtensions
+    │  │  ├─NumericExtensions
+    │  │  ├─ObjectExtensions
+    │  │  ├─StringExtensions
+    │  │  └─TypeExtensions
+    │  ├─MissingfromDNX
+    │  ├─obj
+    │  │  ├─Debug
+    │  │  │  ├─dnx451
+    │  │  │  ├─net40
+    │  │  │  ├─net45
+    │  │  │  ├─net451
+    │  │  │  └─netstandard1.3
+    │  │  ├─realse
+    │  │  │  ├─dnx451
+    │  │  │  ├─net40
+    │  │  │  ├─net45
+    │  │  │  ├─net451
+    │  │  │  └─netstandard1.3
+    │  │  └─Release
+    │  │      ├─dnx451
+    │  │      ├─net40
+    │  │      ├─net45
+    │  │      ├─net451
+    │  │      └─netstandard1.3
+    │  ├─Properties
+    │  └─Utilities
+    ├─AimaTeam.Extension.Alpha
+    │  ├─bin
+    │  │  └─Debug
+    │  │      ├─dnx451
+    │  │      ├─net40
+    │  │      ├─net45
+    │  │      ├─net451
+    │  │      └─netstandard1.3
+    │  └─obj
+    │      └─Debug
+    │          ├─dnx451
+    │          ├─net40
+    │          ├─net45
+    │          ├─net451
+    │          └─netstandard1.3
+    ├─AimaTeam.Extension.StrongName
+    │  ├─bin
+    │  │  └─Debug
+    │  │      ├─dnx451
+    │  │      ├─net40
+    │  │      ├─net45
+    │  │      ├─net451
+    │  │      └─netstandard1.3
+    │  └─obj
+    │      └─Debug
+    │          ├─dnx451
+    │          ├─net40
+    │          ├─net45
+    │          ├─net451
+    │          └─netstandard1.3
+    ├─AimaTeam.Extension.Tests
+    │  ├─bin
+    │  │  └─Debug
+    │  │      ├─dnx451
+    │  │      ├─net40
+    │  │      ├─net45
+    │  │      └─netcoreapp1.0
+    │  ├─Entities
+    │  ├─Extensions
+    │  ├─obj
+    │  │  └─Debug
+    │  │      ├─dnx451
+    │  │      ├─net40
+    │  │      ├─net45
+    │  │      └─netcoreapp1.0
+    │  └─Properties
+    └─artifacts
+        └─obj
+            ├─AimaTeam.Extension
+            │  └─Debug
+            └─AimaTeam.Extension.Tests
+                └─Debug
