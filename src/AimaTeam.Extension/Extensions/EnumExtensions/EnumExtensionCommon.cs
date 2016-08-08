@@ -121,6 +121,18 @@ namespace AimaTeam.Extension
         }
 
         /// <summary>
+        /// 判断指定的枚举 enumSrc 是否等于anyEnums中的任何一个,是：返回true,否则返回false
+        /// </summary>
+        /// <param name="enumSrc">枚举对象</param>
+        /// <returns></returns>
+        public static bool IsAnyOne(this Enum enumSrc,params Enum[] anyEnums)
+        {
+            for (int i = 0; i < anyEnums.Length; i++)
+                if (anyEnums[i] == enumSrc) return true;
+            return false;
+        }
+
+        /// <summary>
         /// 获取指定参数枚举值,包含了键/值以及Attribute附加属性的等等的 <see cref="EnumInfo{TValue}"/> 对象
         /// </summary>
         /// <typeparam name="TValue">指定枚举没的枚举值的。net数据类型</typeparam>
