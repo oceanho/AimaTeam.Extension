@@ -36,16 +36,30 @@ namespace System.Runtime.Serialization.Formatters.Binary
     /// </summary>
     public sealed class BinaryFormatter
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public BinaryFormatter()
         {
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="serializationStream"></param>
+        /// <param name="graph"></param>
         public void Serialize(Stream serializationStream, object graph)
         {
             throw new NotImplementedException();
         }
 
-        public object Deserialize<TObject>(Stream serializationStream) where TObject : class, new()
+    
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="serializationStream"></param>
+        /// <returns></returns>
+        public object Deserialize(Stream serializationStream)
         {
             throw new NotImplementedException();
             // return new TObject();

@@ -12,7 +12,7 @@
     "xmlDoc": true,
     "keyFile": "../../AimaTeam.Extension.snk",
     "compile": {
-      "include": "../AimaTeam.Extension/**/*.cs",
+      "include": [ "../AimaTeam.Extension/**/*.cs", "../AimaTeam.Extension/***/*.cs" ],
       "exclude": "../AimaTeam.Extension/obj/"
     },
     "warningsAsErrors": true
