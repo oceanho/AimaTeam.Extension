@@ -36,7 +36,7 @@ namespace AimaTeam.Extension
     /// The code soure ref from 
     /// https://github.com/Burtsev-Alexey/net-object-deep-copy/blob/master/ObjectExtensions.cs
     /// </summary>
-    internal static partial class ObjectExtensionCommon
+    internal static partial class ObjectExtensionCommon_From_github
     {
         private static readonly MethodInfo CloneMethod = typeof(object).GetMethod("MemberwiseClone", BindingFlags.NonPublic | BindingFlags.Instance);
 
