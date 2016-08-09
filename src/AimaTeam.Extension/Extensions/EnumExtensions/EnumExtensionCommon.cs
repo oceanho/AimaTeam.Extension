@@ -124,6 +124,7 @@ namespace AimaTeam.Extension
         /// 判断指定的枚举 enumSrc 是否等于anyEnums中的任何一个,是：返回true,否则返回false
         /// </summary>
         /// <param name="enumSrc">枚举对象</param>
+        /// <param name="anyEnums">需要比较进行判断的枚举数组</param>
         /// <returns></returns>
         public static bool IsAnyOne(this Enum enumSrc,params Enum[] anyEnums)
         {
