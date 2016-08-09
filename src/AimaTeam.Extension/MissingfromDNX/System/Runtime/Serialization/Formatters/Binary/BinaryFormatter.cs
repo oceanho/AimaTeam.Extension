@@ -26,29 +26,31 @@
  *
  */
 
-using System;
-using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
+#if COREFX
 
-namespace AimaTeam.Extension.Utilities
+using System.IO;
+namespace System.Runtime.Serialization.Formatters.Binary
 {
     /// <summary>
-    /// 序列化工具类
+    /// 定义一个表示 .NET Core 中不提供支持的 BinaryFormatter 对象
     /// </summary>
-    internal sealed class SerializeUtility
+    public sealed class BinaryFormatter
     {
-        internal static T DeepCopy<T>(T item)
-        {            
-            BinaryFormatter formatter = new BinaryFormatter();
-            using (MemoryStream stream = new MemoryStream())
-            {
-                formatter.Serialize(stream, item);
-                stream.Seek(0, SeekOrigin.Begin);
-                return (T)formatter.Deserialize(stream);
-                // stream.Close();
-                // return result;
-            }
+        public BinaryFormatter()
+        {
+        }
+
+        public void Serialize(Stream serializationStream, object graph)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object Deserialize<TObject>(Stream serializationStream) where TObject : class, new()
+        {
+            throw new NotImplementedException();
+            // return new TObject();
         }
     }
 }
+
+#endif
