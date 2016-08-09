@@ -28,8 +28,15 @@
 
 using System;
 using System.IO;
-using System.Runtime.Serialization;
+using System.Runtime;
+//using System.Runtime.Serialization;
+// using System.Runtime.Serialization.Formatters.Binary;
+
+#if COREFX
+using AimaTeam.Runtime.Serialization.Formatters.Binary;
+#else
 using System.Runtime.Serialization.Formatters.Binary;
+#endif
 
 namespace AimaTeam.Extension.Utilities
 {
