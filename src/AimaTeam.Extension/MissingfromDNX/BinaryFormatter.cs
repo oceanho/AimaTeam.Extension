@@ -35,7 +35,7 @@ namespace AimaTeam.Runtime.Serialization.Formatters.Binary
     /// <summary>
     /// 定义一个表示 .NET Core 中暂时[2016-8-9以前]可能不提供支持的 BinaryFormatter 对象
     /// </summary>
-    public sealed class BinaryFormatter
+    internal sealed class BinaryFormatter
     {
         /// <summary>
         /// 
