@@ -26,30 +26,36 @@
  *
  */
 
-namespace AimaTeam.Extension
+using System;
+using System.IO;
+using System.Runtime;
+//using System.Runtime.Serialization;
+// using System.Runtime.Serialization.Formatters.Binary;
+
+#if COREFX
+using AimaTeam.Runtime.Serialization.Formatters.Binary;
+#else
+using System.Runtime.Serialization.Formatters.Binary;
+#endif
+
+namespace AimaTeam.Extension.Utilities
 {
     /// <summary>
-    /// Object类型常用操作而定义的扩展方法静态类
+    /// 序列化工具类
     /// </summary>
-    public static partial class ObjectExtensionCommon
+    internal sealed class SerializeUtility
     {
-        /// <summary>
-        /// 验证对象是否为空引用。如果是空引用，返回True，不是返回False
-        /// 注：针对String类型的数据，加入IsNullOrEmpty()方法进行了校验
-        /// </summary>
-        /// <param name="objSrc">指定校验的object对象</param>
-        /// <returns></returns>
-        public static bool IsNullReference(this object objSrc)
-        {
-            if (objSrc != null)
+        internal static T DeepCopy<T>(T item)
+        {            
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (MemoryStream stream = new MemoryStream())
             {
-                if (objSrc.GetType() == typeof(string))
-                {
-                    return objSrc.ToString().IsNullOrEmptyExt();
-                }
-                return false;
+                formatter.Serialize(stream, item);
+                stream.Seek(0, SeekOrigin.Begin);
+                return (T)formatter.Deserialize(stream);
+                // stream.Close();
+                // return result;
             }
-            return true;
         }
     }
 }

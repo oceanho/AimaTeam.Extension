@@ -37,15 +37,15 @@ namespace AimaTeam.Extension
     /// 字符串常用操作而定义的扩展方法静态类
     /// </summary>
     public static partial class StringExtensionCommon
-    {
-        private static char _defaultSplitChar = ',';     // 字符串默认拆分标记
+    {        
+        private static char[] _defaultSplitChars = { ',' };     // 字符串默认拆分标记 数组
 
         /// <summary>
         /// 验证字符串是否为String.Empty或Null
         /// </summary>
         /// <param name="src">源字符串</param>
         /// <returns></returns>
-        public static bool IsNullOrEmpty2(this string src)
+        public static bool IsNullOrEmptyExt(this string src)
         {
             return string.IsNullOrEmpty(src);
         }
@@ -58,7 +58,7 @@ namespace AimaTeam.Extension
         /// <returns>满足条件返回true，否则返回false</returns>
         public static bool LengthIsLessThan(this string src, int compareLength)
         {
-            if (src.IsNullOrEmpty2()) return compareLength == 0;
+            if (src.IsNullOrEmptyExt()) return compareLength == 0;
             return src.Length < compareLength;
         }
 
@@ -70,7 +70,7 @@ namespace AimaTeam.Extension
         /// <returns>满足条件返回true，否则返回false</returns>
         public static bool LengthIsLessThanOrEqual(this string src, int compareLength)
         {
-            if (src.IsNullOrEmpty2()) return compareLength == 0;
+            if (src.IsNullOrEmptyExt()) return compareLength == 0;
             return src.Length <= compareLength;
         }
 
@@ -80,7 +80,7 @@ namespace AimaTeam.Extension
         /// <param name="src">源字符串</param>
         /// <param name="formatArguments">格式化参数对象</param>
         /// <returns></returns>
-        public static string Format2(this string src, params object[] formatArguments)
+        public static string FormatExt(this string src, params object[] formatArguments)
         {
             return string.Format(src, formatArguments);
         }
@@ -92,7 +92,7 @@ namespace AimaTeam.Extension
         /// <param name="separator">分隔符</param>
         /// <param name="formatArguments">参数列表</param>
         /// <returns></returns>
-        public static string JoinFormat(this string src, string separator, params object[] formatArguments)
+        public static string JoinAndFormat(this string src, string separator, params object[] formatArguments)
         {
             return string.Format(src, string.Join(separator, formatArguments));
         }
@@ -103,7 +103,7 @@ namespace AimaTeam.Extension
         /// <param name="src">源字符串</param>
         /// <param name="concatParams">连接的参数对象</param>
         /// <returns></returns>
-        public static string Concat2(this string src, params object[] concatParams)
+        public static string ConcatExt(this string src, params object[] concatParams)
         {
             foreach (var item in concatParams)
                 src = string.Concat(src, item.ToString());
@@ -116,15 +116,15 @@ namespace AimaTeam.Extension
         /// <param name="src">源字符串</param>
         /// <param name="splitChars">拆分函数所需拆分字符（默认值,逗号“,”）</param>
         /// <returns></returns>
-        public static List<TResult> Split2<TResult>(this string src, params char[] splitChars)
+        public static List<TResult> SplitExt<TResult>(this string src, params char[] splitChars)
         {
-            EnsureUtility.IsNotNull(src, "Split2:src");
+            EnsureUtility.IsNotNull(src, "SplitExt:src");
             List<TResult> list = new List<TResult>();
             Func<string, TResult> converthandler = DelegateStaticConvertMethods<TResult>.ChangeTypeFromString;
 
             if (typeof(TResult).IsEnum()) { converthandler = DelegateStaticConvertMethods<TResult>.ChangeTypeAsEnumFromString; }
 
-            splitChars = (splitChars == null || splitChars.Length == 0) ? new char[] { _defaultSplitChar } : splitChars;
+            splitChars = (splitChars == null || splitChars.Length == 0) ? _defaultSplitChars : splitChars;
             foreach (var item in src.Split(splitChars))
             {
                 list.Add(converthandler.Invoke(item));
@@ -133,22 +133,42 @@ namespace AimaTeam.Extension
         }
 
         /// <summary>
+        /// 把一个字符串按照指定的拆分参数拆分为指定的List&lt;TResult%gt;对象，spitchars默认为','
+        /// </summary>
+        /// <param name="src">源字符串</param>
+        /// <param name="getIndex">获取拆分后的转换为 TResult 对象的索引,默认值：0</param>
+        /// <param name="splitChars">拆分函数所需拆分字符（默认值,逗号“,”）</param>
+        /// <returns></returns>
+        public static TResult SplitExtAndGetResultByIndex<TResult>(this string src, int getIndex = 0, params char[] splitChars) where TResult : class
+        {
+            EnsureUtility.IsNotNull(src, "SplitExtAndGetResultByIndex:src");
+            Func<string, TResult> converthandler = DelegateStaticConvertMethods<TResult>.ChangeTypeFromString;
+            if (typeof(TResult).IsEnum()) { converthandler = DelegateStaticConvertMethods<TResult>.ChangeTypeAsEnumFromString; }
+
+            splitChars = (splitChars == null || splitChars.Length == 0) ? _defaultSplitChars : splitChars;
+            var splitedArraies = src.Split(splitChars);
+            if (splitedArraies != null && splitedArraies.Length > getIndex)
+                return converthandler(splitedArraies[getIndex]);
+            return null;
+        }
+
+        /// <summary>
         /// 获取一个值，该值表示一个字符串的长度是否小于另外一个字符串的长度（compareString）
         /// </summary>
         /// <param name="src">源字符串</param>
         /// <param name="compareString">另外一个字符串</param>
         /// <returns>满足条件返回true，否则返回false</returns>
-        public static bool LengthIsLessThanOther(this string src, string compareString)
+        public static bool LengthIsLessThan(this string src, string compareString)
         {
-            if (!src.IsNullOrEmpty2() && !compareString.IsNullOrEmpty2())
+            if (!src.IsNullOrEmptyExt() && !compareString.IsNullOrEmptyExt())
             {
                 return src.Length < compareString.Length;
             }
-            else if (!src.IsNullOrEmpty2() && compareString.IsNullOrEmpty2())
+            else if (!src.IsNullOrEmptyExt() && compareString.IsNullOrEmptyExt())
             {
                 return src.Length == 0;
             }
-            else if (src.IsNullOrEmpty2() && !compareString.IsNullOrEmpty2())
+            else if (src.IsNullOrEmptyExt() && !compareString.IsNullOrEmptyExt())
             {
                 return compareString.Length == 0;
             }
@@ -175,7 +195,7 @@ namespace AimaTeam.Extension
         /// <returns></returns>
         public static bool StartsWithAny(this string src, StringComparison comparison, params string[] anyStrings)
         {
-            EnsureUtility.IsNotNull(src, "Split2:StartsWithAny");
+            EnsureUtility.IsNotNull(src, "SplitExt:StartsWithAny");
             foreach (var str in anyStrings)
                 if (src.StartsWith(str, comparison)) return true;
             return false;
@@ -201,7 +221,7 @@ namespace AimaTeam.Extension
         /// <returns></returns>
         public static bool EndsWithAny(this string src, StringComparison comparison, params string[] anyStrings)
         {
-            EnsureUtility.IsNotNull(src, "Split2:EndsWithAny 'src'");
+            EnsureUtility.IsNotNull(src, "SplitExt:EndsWithAny 'src'");
             foreach (var str in anyStrings)
                 if (src.EndsWith(str, comparison)) return true;
             return false;
@@ -216,7 +236,7 @@ namespace AimaTeam.Extension
         public static int GetCharFindedCount(this string src, char findChar)
         {
             int record = 0;
-            if (src.IsNullOrEmpty2()) return 0;
+            if (src.IsNullOrEmptyExt()) return 0;
             for (int i = 0; i < src.Length; i++)
             {
                 if (src[i] == findChar) { record++; }
@@ -245,8 +265,8 @@ namespace AimaTeam.Extension
         public static int GetStringFindedCount(this string src, string findString, StringComparison stringComparison)
         {
 
-            if (src.IsNullOrEmpty2()) return 0;
-            if (findString.IsNullOrEmpty2()) return 0;
+            if (src.IsNullOrEmptyExt()) return 0;
+            if (findString.IsNullOrEmptyExt()) return 0;
 
             int record = 0;
             int foreachRecord = 0;
@@ -254,7 +274,7 @@ namespace AimaTeam.Extension
             string recordSubstr = string.Empty;
 
             findStringLen = findString.Length;
-            if (findString.LengthIsLessThanOther(src))
+            if (findString.LengthIsLessThan(src))
             {
                 foreachRecord = src.Length - findString.Length;
             }

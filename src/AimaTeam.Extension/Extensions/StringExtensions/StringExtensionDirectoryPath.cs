@@ -54,7 +54,7 @@ namespace AimaTeam.Extension
             if (!string.IsNullOrEmpty(parentLevel))
             {
                 if (!parentLevel.StartsWith("../"))
-                    throw ExceptionUtility.Create<FormatException>("unsopport “{0}” starts with the parentLevel,should be {1}".Format2(parentLevel, "../"));
+                    throw ExceptionUtility.Create<FormatException>("unsopport “{0}” starts with the parentLevel,should be {1}".FormatExt(parentLevel, "../"));
                 intParentLevel = parentLevel.GetStringFindedCount("../");
                 subVirtualPath = parentLevel.Substring((parentLevel.GetStringFindedCount("../") * 3));
             }
@@ -113,7 +113,7 @@ namespace AimaTeam.Extension
             else
                 parentLevel = slashcharItemIndex[slashcharItemIndex.Count - parentLevel];
 
-            return path.Substring(0, parentLevel + 1).Concat2(subVirtualPath.Trim((char)slashcharAscci, (char)backslashAscci)).TrimEnd((char)slashcharAscci, (char)backslashAscci).Concat2('\\');
+            return path.Substring(0, parentLevel + 1).ConcatExt(subVirtualPath.Trim((char)slashcharAscci, (char)backslashAscci)).TrimEnd((char)slashcharAscci, (char)backslashAscci).ConcatExt('\\');
         }
     }
 }

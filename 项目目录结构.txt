@@ -1,0 +1,38 @@
+﻿.nuget
+	nuget 包管理程序
+docs
+	文档
+src
+	项目源代码根目录
+
+src的子目录结构树以及说明
+src
+    ├─.nuget
+    ├─AimaTeam.Extension    │  
+    │  ├─Common			（公共定义）
+    │  ├─Enttities			（公共实体定义）
+    │  ├─Extensions			（扩展定义与实现）
+    │  │  ├─AttributeExtensions	（Attribute 扩展）
+    │  │  ├─ByteExtensions		（Byte 扩展）
+    │  │  ├─DateTimeExtensions	（DateTime 扩展）
+    │  │  ├─EnumExtensions		（Enum 扩展）
+    │  │  ├─IEnumerableExtensions	（IEnumerable 扩展）
+    │  │  ├─MemberInfoExtensions	（MemberInfo 扩展）
+    │  │  ├─NumericExtensions	（Numeric 扩展）
+    │  │  ├─ObjectExtensions	（Object 扩展）
+    │  │  ├─StringExtensions	（String 扩展）
+    │  │  └─TypeExtensions		（Type 扩展）
+    │  ├─MissingfromDNX		（.NET Core缺失文件目录，定义在.NET CORE 中，没有定义的 Microsoft类，比如 DescriptionAttribute 类）
+    │  ├─Properties			（项目属性文件目录）
+    │  └─Utilities			（Utility工具类目录）
+    ├─AimaTeam.Extension.Alpha	（内测版项目，没有强签名）
+    ├─AimaTeam.Extension.StrongName	（正式发布的强签名版本，正式发布library的时候使用）
+    ├─AimaTeam.Extension.Tests	（测试项目，基于xunit）
+    │  └─Properties
+    └─artifacts	（.NET Core 程序文件目录。）
+
+AimaTeam.Extension.snk
+	项目强类型签名文件，目前在只在 AimaTeam.Extension.StrongName 中使用
+
+NuGet.Config
+	nuget 包管理程序配置文件

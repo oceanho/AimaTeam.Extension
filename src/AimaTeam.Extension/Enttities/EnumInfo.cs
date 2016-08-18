@@ -32,17 +32,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-namespace AimaTeam.Extension
-{
 #if COREFX
     /*
-    GetTypeInfo()是一个扩展方法,在System.Reflection命名空间的TypeExtension类下面。
-    .net core 需要GetType() 需要通过 GetTypeInfo().AsType()才能实现反射操作。    
+    GetTypeInfo()是一个扩展方法,包含在 System.Reflection.TypeExtension 类中
+    .NET Core 需要通过 GetTypeInfo().AsType()才能获取到对象的 Type    
     */
-    using System.Reflection;    
+    using System.Reflection;
 #endif
+
+namespace AimaTeam.Extension
+{
     /// <summary>
-    /// 定义一个表示枚举
+    /// 定义一个表示单个枚举（键/值）信息的实体类
     /// </summary>
     /// <typeparam name="TValue"></typeparam>
     public class EnumInfo<TValue>
@@ -95,7 +96,7 @@ namespace AimaTeam.Extension
         public EnumInfoCollection(Type enumType)
         {
             if (!enumType.IsEnum())
-                throw new ArgumentException("参数enumType类型无效,请确认参数enumType的类型是一个合法的枚举。", innerException: null);
+                throw new ArgumentException("参数enumType类型:{0}无效,请确认参数enumType的类型是一个合法的枚举。".FormatExt(nameof(enumType)), innerException: null);
             this.enumType = enumType;
 
             EnumInfo<TValue> enumInfo;

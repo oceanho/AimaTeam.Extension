@@ -67,7 +67,7 @@ namespace AimaTeam.Extension
                 }
                 valueIndex++;
             }
-            throw ExceptionUtility.Create<InvalidCastException>("The {0} invalid".Format2(enumSrc));
+            throw ExceptionUtility.Create<InvalidCastException>("The {0} invalid".FormatExt(enumSrc));
         }
 
         /// <summary>
@@ -118,6 +118,19 @@ namespace AimaTeam.Extension
         public static long GetValueAsLong(this Enum enumSrc)
         {
             return enumSrc.GetValue<long>();
+        }
+
+        /// <summary>
+        /// 判断指定的枚举 enumSrc 是否等于anyEnums中的任何一个,是：返回true,否则返回false
+        /// </summary>
+        /// <param name="enumSrc">枚举对象</param>
+        /// <param name="anyEnums">需要比较进行判断的枚举数组</param>
+        /// <returns></returns>
+        public static bool IsAnyOne(this Enum enumSrc,params Enum[] anyEnums)
+        {
+            for (int i = 0; i < anyEnums.Length; i++)
+                if (anyEnums[i] == enumSrc) return true;
+            return false;
         }
 
         /// <summary>

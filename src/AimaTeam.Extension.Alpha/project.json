@@ -1,5 +1,5 @@
 ﻿{
-  "version": "1.0.0-Alpha",
+  "version": "2.0.0-Alpha",
   "packOptions": {
     "owners": [
       "hehai",
@@ -12,7 +12,7 @@
     "xmlDoc": true,
     "keyFile": "../../AimaTeam.Extension.snk",
     "compile": {
-      "include": "../AimaTeam.Extension/**/*.cs",
+      "include": [ "../AimaTeam.Extension/**/*.cs", "../AimaTeam.Extension/***/*.cs", "../AimaTeam.Extension/****/*.cs" ],
       "exclude": "../AimaTeam.Extension/obj/"
     },
     "warningsAsErrors": true
