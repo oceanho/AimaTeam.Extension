@@ -4,7 +4,7 @@ An Open Source project for .net extensions' method lib , it's support .net 3.5[+
 <pre>
 The first
 	Reference to the AimaTeam.Extension lib into you project , you can like this
-	<h4>Install-Package AimaTeam.Extension.Alpha -Pre</h4>
+	Install-Package AimaTeam.Extension.Alpha -Pre
 The second
 	Add using AimaTeam.Extension into your class of code
 
