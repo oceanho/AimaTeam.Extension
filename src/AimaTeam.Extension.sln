@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9F2D8E19-69C5-449D-82DA-942240E4A6FE}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,6 +17,10 @@ EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AimaTeam.Extension.StrongName", "AimaTeam.Extension.StrongName\AimaTeam.Extension.StrongName.xproj", "{12B5896E-1ADD-4261-BAF9-55016F980687}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AimaTeam.Extension.Alpha", "AimaTeam.Extension.Alpha\AimaTeam.Extension.Alpha.xproj", "{FAB1EB92-2316-4200-955E-AD2BDEB277E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{B10EA522-380E-422F-874D-CB9A9316A250}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AimaTeam.Extension_ConsoleApp_Sample", "AimaTeam.Extension_ConsoleApp_Sample\AimaTeam.Extension_ConsoleApp_Sample.csproj", "{36C063FB-C638-4FA9-921B-2BE90E3B7AA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,8 +44,15 @@ Global
 		{FAB1EB92-2316-4200-955E-AD2BDEB277E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAB1EB92-2316-4200-955E-AD2BDEB277E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAB1EB92-2316-4200-955E-AD2BDEB277E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C063FB-C638-4FA9-921B-2BE90E3B7AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C063FB-C638-4FA9-921B-2BE90E3B7AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C063FB-C638-4FA9-921B-2BE90E3B7AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C063FB-C638-4FA9-921B-2BE90E3B7AA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{36C063FB-C638-4FA9-921B-2BE90E3B7AA9} = {B10EA522-380E-422F-874D-CB9A9316A250}
 	EndGlobalSection
 EndGlobal
